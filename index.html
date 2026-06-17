@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Leslie Simon Talent — Executive Recruitment & Career Intelligence</title>
+<style>
+/* ═══ TOKENS ════════════════════════════════════════════════ */
+:root {
+  --s900:#1e2a30; --s800:#2c3a42; --s700:#3d4f59; --s600:#4e6270;
+  --s400:#93a8b0; --s200:#c5d2d8; --s100:#dde6ea; --s50:#eef3f5;
+  --bg:#e8edf0;
+  --cu700:#8a5c38; --cu600:#9c6435; --cu500:#c49a6c;
+  --cu400:#d4b48a; --cu300:#e8d0b0; --gold:#c8a96e;
+  --td:#1e2a30; --tm:#3d4f59; --tl:#5f7178;
+  --lw:270px; --rw:300px;
+  --serif:'Georgia','Times New Roman',serif;
+  --sans:'Helvetica Neue',Arial,sans-serif;
+  /* WCAG focus ring */
+  --focus-ring: 0 0 0 3px #fff, 0 0 0 5px var(--gold);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--td);display:flex;min-height:100vh;overflow-x:hidden}
+
+/* ── WCAG SKIP LINK ─────────────────────────────────────── */
+.skip-link{
+  position:absolute;top:-100%;left:8px;z-index:9999;
+  background:var(--s900);color:var(--gold);
+  padding:10px 18px;font-size:13px;font-weight:bold;
+  border-radius:0 0 4px 4px;text-decoration:none;
+  border:2px solid var(--gold);
+}
+.skip-link:focus{top:0}
+
+/* ── WCAG FOCUS INDICATORS (global) ────────────────────── */
+:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ═══ TOP AUTH BAR ══════════════════════════════════════════ */
+#auth-bar{
+  position:fixed;top:0;left:var(--lw);right:var(--rw);
+  height:44px;background:var(--s900);
+  display:flex;align-items:center;justify-content:flex-end;
+  padding:0 28px;gap:12px;z-index:90;
+  border-bottom:1px solid var(--s700);
+}
+.auth-link{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--s400);cursor:pointer;transition:color 0.2s;background:none;border:none;}
+.auth-link:hover{color:var(--gold)}
+.auth-btn{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  background:var(--cu600);color:#fff;border:none;padding:6px 18px;
+  border-radius:2px;cursor:pointer;transition:background 0.2s}
+.auth-btn:hover{background:var(--cu700)}
+#user-bar{display:none;align-items:center;gap:14px}
+.user-avatar{width:28px;height:28px;border-radius:50%;
+  background:var(--cu500);display:flex;align-items:center;
+  justify-content:center;font-size:11px;color:#fff;font-weight:bold}
+.user-name{font-size:11px;color:var(--s200);letter-spacing:0.06em}
+.user-link{font-size:10.5px;color:var(--s400);cursor:pointer;text-transform:uppercase;
+  letter-spacing:0.1em;background:none;border:none}
+.user-link:hover{color:var(--gold)}
+
+/* ═══ LEFT SIDEBAR ══════════════════════════════════════════ */
+#sidebar{
+  position:fixed;top:0;left:0;width:var(--lw);height:100vh;
+  background:var(--s800);display:flex;flex-direction:column;
+  overflow-y:auto;z-index:100;border-right:1px solid var(--s700);
+}
+.sb-logo{padding:28px 22px 18px;border-bottom:1px solid var(--s700);text-align:center}
+.sconce{width:150px;height:112px;margin:0 auto 12px;display:block;
+  filter:drop-shadow(0 0 16px rgba(200,169,110,.45))}
+.brand-name{font-family:var(--serif);font-size:15px;letter-spacing:0.12em;
+  color:var(--gold);text-transform:uppercase;line-height:1.5}
+.brand-tag{font-size:9px;letter-spacing:0.18em;color:var(--s400);
+  text-transform:uppercase;margin-top:4px}
+nav{padding:20px 0;flex:1}
+nav ul{list-style:none}
+.nav-head{padding:16px 26px 4px;font-size:8.5px;letter-spacing:0.24em;
+  text-transform:uppercase;color:#93a8b0}
+nav a{display:block;padding:9px 26px;color:var(--s200);text-decoration:none;
+  font-size:11px;letter-spacing:0.09em;text-transform:uppercase;
+  transition:color .2s,background .2s;border-left:2px solid transparent}
+nav a:hover,nav a.active{color:var(--gold);background:rgba(200,169,110,.07);
+  border-left-color:var(--gold)}
+nav ul ul a{padding-left:40px;font-size:10px;color:var(--s400)}
+nav ul ul a:hover{color:var(--cu400)}
+.sb-footer{padding:16px 22px;border-top:1px solid var(--s700);
+  font-size:9px;color:var(--s400);letter-spacing:0.06em;text-align:center}
+
+/* ═══ RIGHT TIPS PANEL ══════════════════════════════════════ */
+#tips-panel{
+  position:fixed;top:0;right:0;width:var(--rw);height:100vh;
+  background:var(--s900);display:flex;flex-direction:column;
+  overflow:hidden;z-index:100;border-left:1px solid var(--s700);
+}
+.tips-header{padding:16px 20px 14px;border-bottom:1px solid var(--s700);flex-shrink:0}
+.tips-title{font-family:var(--serif);font-size:13px;color:var(--gold);margin-bottom:10px}
+.tips-tabs{display:flex;gap:0}
+.tips-tab{flex:1;padding:7px 0;font-size:9.5px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--s400);border:none;background:none;
+  cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;text-align:center}
+.tips-tab.active,.tips-tab:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.tips-search{margin-top:12px;display:flex;gap:8px}
+.tips-search input{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--s700);
+  border-radius:2px;color:var(--s100);font-size:11px;padding:7px 10px;outline:none;
+  font-family:var(--sans)}
+.tips-search input::placeholder{color:var(--s400)}
+.tips-search input:focus{border-color:var(--gold)}
+.tips-search button{background:var(--cu600);color:#fff;border:none;
+  padding:7px 12px;border-radius:2px;font-size:10px;cursor:pointer;
+  letter-spacing:0.08em;transition:background .2s;white-space:nowrap}
+.tips-search button:hover{background:var(--cu700)}
+.tips-scroll{flex:1;overflow-y:auto;padding:14px}
+.tips-scroll::-webkit-scrollbar{width:3px}
+.tips-scroll::-webkit-scrollbar-track{background:transparent}
+.tips-scroll::-webkit-scrollbar-thumb{background:var(--s600);border-radius:2px}
+
+.tip-card{display:block;text-decoration:none;color:inherit;
+  background:rgba(255,255,255,.04);border:1px solid var(--s700);
+  border-left:3px solid var(--cu500);border-radius:2px;padding:14px;margin-bottom:12px;
+  cursor:pointer;transition:background .2s,border-left-color .2s}
+.tip-card:hover{background:rgba(200,169,110,.07);border-left-color:var(--gold)}
+.tip-card:hover .tip-headline{color:#fff}
+.tip-thumb{position:relative;width:100%;height:112px;border-radius:2px;overflow:hidden;
+  margin:0 0 12px;background:linear-gradient(135deg,var(--cu700) 0%,var(--s800) 72%)}
+.tip-thumb::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(115deg,rgba(255,255,255,.07),transparent 55%);pointer-events:none}
+.tip-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .35s}
+.tip-thumb.has-img img{opacity:1}
+.tip-thumb.has-img::after{display:none}
+.tip-source{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--cu400);margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tip-ext{font-size:11px;color:var(--cu400);flex-shrink:0}
+.tip-headline{font-size:12px;color:var(--s100);line-height:1.5;margin-bottom:6px;
+  font-family:var(--serif)}
+.tip-blurb{font-size:11px;color:var(--s400);line-height:1.6}
+.tip-date{font-size:9.5px;color:#93a8b0;margin-top:6px}
+.tips-refresh{display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--s400);cursor:pointer;border-top:1px solid var(--s700);
+  background:none;border-bottom:none;border-left:none;border-right:none;
+  width:100%;transition:color .2s;flex-shrink:0}
+.tips-refresh:hover{color:var(--gold)}
+.spin{animation:spin .8s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ═══ PANEL COLLAPSE CONTROLS ═══════════════════════════════ */
+/* Left sidebar: X to collapse (re-open via ☰ #menu-toggle) */
+.sb-logo{position:relative}
+.sb-collapse{
+  position:absolute;top:10px;right:10px;width:30px;height:30px;
+  background:none;border:1px solid var(--s700);border-radius:3px;
+  color:var(--s400);cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:color .2s,border-color .2s;z-index:2;
+}
+.sb-collapse:hover{color:var(--gold);border-color:var(--gold)}
+.sb-collapse svg{width:13px;height:13px;display:block}
+
+#sidebar{transition:transform .3s ease}
+body.nav-collapsed #sidebar{transform:translateX(-100%)}
+body.nav-collapsed main{margin-left:0}
+body.nav-collapsed #auth-bar{left:0}
+body.nav-collapsed #menu-toggle{display:flex}
+
+/* Right intelligence feed: chevron tab to collapse / open */
+#tips-panel{transition:transform .3s ease}
+.tips-toggle{
+  position:fixed;top:50%;right:var(--rw);transform:translateY(-50%);
+  width:22px;height:54px;background:var(--s900);
+  border:1px solid var(--s700);border-right:none;border-radius:5px 0 0 5px;
+  color:var(--s200);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  z-index:401;box-shadow:-3px 0 10px rgba(0,0,0,.3);
+  transition:right .3s ease,background .2s,color .2s;
+}
+.tips-toggle:hover{background:var(--cu600);color:#fff}
+.tips-toggle svg{width:10px;height:16px;transition:transform .3s ease;transform:scaleX(-1)}
+body.tips-collapsed #tips-panel{transform:translateX(100%)}
+body.tips-collapsed main{margin-right:0}
+body.tips-collapsed #auth-bar{right:0}
+body.tips-collapsed #chat-drawer{right:0}
+body.tips-collapsed .chat-fab{right:24px}
+body.tips-collapsed .tips-toggle{right:0}
+body.tips-collapsed .tips-toggle svg{transform:scaleX(1)}
+@media(max-width:1100px){.tips-toggle{display:none}}
+
+/* ═══ MAIN CONTENT ══════════════════════════════════════════ */
+main{margin-left:var(--lw);margin-right:var(--rw);margin-top:44px;flex:1;min-height:calc(100vh - 44px)}
+
+/* ═══ FOUNDER HERO ══════════════════════════════════════════ */
+#founder{
+  background:linear-gradient(160deg,var(--s800) 0%,var(--s900) 100%);
+  padding:60px 64px 56px;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;
+}
+#founder::after{content:'';position:absolute;top:-40px;right:0;
+  width:420px;height:420px;
+  background:radial-gradient(ellipse,rgba(196,154,108,.16) 0%,transparent 70%);
+  pointer-events:none}
+/* Faded brand-mark watermark filling the hero's right side */
+.hero-mark{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);
+  width:clamp(340px,40vw,620px);height:auto;opacity:.07;pointer-events:none;z-index:0}
+.hero-mark [fill]:not([fill="none"]){fill:#c8a96e}
+.hero-mark [stroke]{stroke:#c8a96e}
+@media(max-width:900px){.hero-mark{display:none}}
+.founder-photo{
+  width:180px;height:220px;border-radius:3px;
+  background:linear-gradient(145deg,var(--s700),var(--cu700));
+  border:3px solid var(--cu500);flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  overflow:hidden;position:relative;
+}
+.founder-photo-initials{
+  font-family:var(--serif);font-size:52px;color:rgba(255,255,255,.15);
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);
+}
+.founder-photo-label{
+  background:rgba(0,0,0,.45);width:100%;text-align:center;
+  padding:10px 8px;font-size:9px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--cu300);
+}
+.founder-tag{font-size:9.5px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--cu400);margin-bottom:12px}
+.founder-name{font-family:var(--serif);font-size:clamp(26px,3vw,42px);
+  color:#fff;font-weight:normal;line-height:1.15;margin-bottom:10px}
+.founder-name em{font-style:italic;color:var(--gold)}
+.founder-title{font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--cu400);margin-bottom:22px}
+.founder-bio{font-size:14px;line-height:1.9;color:var(--s200);max-width:580px;margin-bottom:28px}
+.founder-stats{display:flex;gap:36px;margin-bottom:28px}
+.stat-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+.stat-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--s400);margin-top:4px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 26px;font-size:10.5px;letter-spacing:0.12em;
+  text-transform:uppercase;text-decoration:none;border-radius:2px;
+  transition:all .2s;cursor:pointer;border:none}
+.btn-cu{background:var(--cu600);color:#fff}
+.btn-cu:hover{background:var(--cu700)}
+.btn-outline{background:transparent;color:var(--cu300);border:1px solid var(--s600)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-chat{background:rgba(200,169,110,.12);color:var(--gold);
+  border:1px solid var(--cu500)}
+.btn-chat:hover{background:rgba(200,169,110,.22)}
+
+/* ═══ SECTIONS ══════════════════════════════════════════════ */
+section{padding:60px 64px}
+section:nth-child(even){background:#f2f5f7}
+.sec-tag{font-size:9.5px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--cu600);margin-bottom:12px}
+.sec-title{font-family:var(--serif);font-size:clamp(20px,2.2vw,30px);
+  font-weight:normal;color:var(--s800);margin-bottom:16px;line-height:1.3}
+.sec-lead{font-size:14px;line-height:1.9;color:var(--tm);max-width:620px;margin-bottom:40px}
+.divider{width:44px;height:2px;background:var(--cu500);margin:14px 0 36px}
+
+/* ═══ DUAL AUDIENCE ═════════════════════════════════════════ */
+.dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.aud-block{background:#fff;border-radius:2px;overflow:hidden;border:1px solid var(--s100)}
+.aud-head{padding:24px 28px 20px;background:var(--s800);color:#fff}
+.aud-head h3{font-family:var(--serif);font-size:18px;font-weight:normal;
+  color:var(--gold);margin-bottom:6px}
+.aud-head p{font-size:12.5px;color:var(--s200);line-height:1.7}
+.aud-body{padding:24px 28px}
+.svc-list{list-style:none}
+.svc-list li{display:flex;align-items:flex-start;gap:10px;padding:9px 0;
+  border-bottom:1px solid var(--s50);font-size:13px;color:var(--tm);line-height:1.6}
+.svc-list li::before{content:'◆';color:var(--cu500);font-size:7px;margin-top:5px;flex-shrink:0}
+
+/* ═══ AI TOOLS ══════════════════════════════════════════════ */
+#tools{background:var(--s800);color:#fff}
+#tools .sec-title{color:var(--gold)}
+#tools .sec-lead{color:var(--s200)}
+#tools .sec-tag{color:var(--cu400)}
+#tools .divider{background:var(--cu600)}
+.tool-tabs{display:flex;gap:0;margin-bottom:28px;border-bottom:1px solid var(--s700)}
+.ttab{padding:10px 24px;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--s400);cursor:pointer;border-bottom:2px solid transparent;
+  transition:all .2s;background:none;border-top:none;border-left:none;border-right:none}
+.ttab.active,.ttab:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.tool-panel{display:none}
+.tool-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.tool-in{display:flex;flex-direction:column;gap:12px}
+.tlabel{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--cu400);margin-bottom:3px}
+textarea,select,.t-input{width:100%;background:rgba(255,255,255,.06);
+  border:1px solid var(--s600);border-radius:2px;color:var(--s100);
+  font-family:var(--sans);font-size:13px;padding:12px 14px;outline:none;
+  transition:border-color .2s;appearance:none}
+textarea{resize:vertical;min-height:180px;line-height:1.7}
+textarea::placeholder,.t-input::placeholder{color:var(--s400)}
+textarea:focus,select:focus,.t-input:focus{border-color:var(--gold)}
+option{background:var(--s800)}
+.btn-go{background:var(--cu600);color:#fff;border:none;padding:12px 28px;
+  font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+  border-radius:2px;cursor:pointer;transition:background .2s;align-self:flex-start}
+.btn-go:hover{background:var(--cu700)}
+.tool-out{background:rgba(0,0,0,.28);border:1px solid var(--s700);
+  border-radius:2px;padding:22px;min-height:320px;display:flex;flex-direction:column}
+.out-label{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--cu400);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--s700)}
+.out-body{font-size:12.5px;line-height:1.85;color:var(--s200);flex:1;white-space:pre-wrap}
+.out-ph{color:var(--s400);font-style:italic;font-size:12.5px}
+.loading-ring{display:none;width:18px;height:18px;border:2px solid rgba(200,169,110,.2);
+  border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;margin-left:10px}
+.note{font-size:11px;color:var(--tl);line-height:1.7;font-style:italic;margin-top:6px}
+
+/* ═══ INTERVIEW PREP ════════════════════════════════════════ */
+.int-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.firm-chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
+.firm-chip{background:var(--s800);color:var(--gold);padding:5px 12px;
+  font-size:10.5px;letter-spacing:0.07em;border-radius:2px;border:1px solid var(--s700)}
+.q-list{list-style:none}
+.q-list li{display:flex;align-items:flex-start;gap:10px;padding:11px 0;
+  border-bottom:1px solid var(--s100);font-size:13px;color:var(--tm);line-height:1.6;cursor:pointer}
+.q-list li:hover{color:var(--cu600)}
+.q-num{font-family:var(--serif);font-size:15px;color:var(--cu400);min-width:22px;text-align:center}
+.video-mock{background:var(--s900);border-radius:3px;aspect-ratio:16/10;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;border:1px solid var(--s700)}
+.play-btn{width:54px;height:54px;border-radius:50%;background:var(--cu600);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.play-btn:hover{background:var(--cu500)}
+.play-btn svg{width:20px;height:20px;fill:#fff;margin-left:3px}
+.video-mock p{color:var(--s400);font-size:11px;letter-spacing:0.1em}
+
+/* ═══ BACKGROUND CHECK ══════════════════════════════════════ */
+.bgc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.bgc-form{background:#fff;padding:32px;border:1px solid var(--s100);border-radius:2px}
+.bgc-form h3{font-family:var(--serif);font-size:17px;font-weight:normal;
+  color:var(--s800);margin-bottom:22px}
+.fg{margin-bottom:18px}
+.fl{display:block;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--s700);margin-bottom:7px}
+.fi{width:100%;border:1px solid var(--s200);border-radius:2px;padding:10px 13px;
+  font-size:13px;color:var(--td);font-family:var(--sans);outline:none;
+  transition:border-color .2s;background:#fff;appearance:none}
+.fi:focus{border-color:var(--cu500)}
+.pkgs{display:grid;gap:12px}
+.pkg{background:#fff;border:1px solid var(--s100);border-left:3px solid var(--cu500);
+  padding:18px 22px;border-radius:2px}
+.pkg h3{font-family:var(--serif);font-size:15px;font-weight:normal;
+  color:var(--s800);margin-bottom:5px}
+.pkg p{font-size:12px;color:var(--tm);line-height:1.7}
+.pkg-price{font-size:10.5px;color:var(--cu600);letter-spacing:0.08em;margin-top:6px}
+
+/* ═══ PROCESS STEPS ═════════════════════════════════════════ */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  counter-reset:step;border:1px solid var(--s100);border-radius:2px;overflow:hidden}
+.step{padding:28px 22px;border-right:1px solid var(--s100);
+  counter-increment:step;background:#fff}
+.step:last-child{border-right:none}
+.step::before{content:counter(step,decimal-leading-zero);
+  font-family:var(--serif);font-size:30px;color:var(--cu300);display:block;
+  margin-bottom:12px;line-height:1}
+.step h3{font-family:var(--serif);font-size:15px;font-weight:normal;
+  color:var(--s800);margin-bottom:8px}
+.step p{font-size:12.5px;line-height:1.75;color:var(--tm)}
+
+/* ═══ TESTIMONIALS ══════════════════════════════════════════ */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tcard{background:#fff;padding:28px 24px;border-radius:2px;
+  border:1px solid var(--s100);position:relative}
+.tcard::before{content:'\201C';font-family:var(--serif);font-size:56px;
+  color:var(--cu300);position:absolute;top:8px;left:18px;line-height:1}
+.tcard p{font-size:13px;line-height:1.8;color:var(--tm);
+  font-style:italic;padding-top:20px;margin-bottom:18px}
+.tauthor{font-size:11.5px;color:var(--cu600);letter-spacing:0.06em}
+.trole{font-size:10.5px;color:var(--tl);margin-top:2px}
+
+/* ═══ CONTACT ═══════════════════════════════════════════════ */
+#contact{background:var(--s900);color:#fff}
+#contact .sec-title{color:var(--gold)}
+#contact .sec-lead{color:var(--s200)}
+#contact .sec-tag{color:var(--cu400)}
+#contact .divider{background:var(--cu600)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.cform{display:flex;flex-direction:column;gap:14px}
+.cform input,.cform select,.cform textarea{
+  background:rgba(255,255,255,.06);border:1px solid var(--s700);
+  border-radius:2px;color:#fff;font-family:var(--sans);font-size:13px;
+  padding:12px 14px;outline:none;width:100%;transition:border-color .2s;appearance:none}
+.cform input::placeholder,.cform textarea::placeholder{color:var(--s400)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{border-color:var(--gold)}
+.cform textarea{min-height:120px;resize:vertical}
+.cform option{background:var(--s800)}
+.cinfo{display:flex;flex-direction:column;gap:22px}
+.ci{display:flex;gap:14px;align-items:flex-start}
+.ci-icon{width:38px;height:38px;background:rgba(196,154,108,.12);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ci h3{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--cu400);margin-bottom:4px}
+.ci p{font-size:13.5px;color:var(--s200);line-height:1.7}
+
+/* ═══ ACCOUNTS MODAL ════════════════════════════════════════ */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);
+  z-index:500;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--s800);border:1px solid var(--s700);border-radius:3px;
+  width:420px;max-width:95vw;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.modal-head{padding:28px 32px 22px;border-bottom:1px solid var(--s700)}
+.modal-head h2{font-family:var(--serif);font-size:22px;font-weight:normal;color:var(--gold)}
+.modal-head p{font-size:12.5px;color:var(--s400);margin-top:6px;line-height:1.6}
+.modal-tabs{display:flex;border-bottom:1px solid var(--s700)}
+.modal-tab{flex:1;padding:12px;font-size:10.5px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--s400);cursor:pointer;
+  border-bottom:2px solid transparent;transition:all .2s;background:none;
+  border-top:none;border-left:none;border-right:none;text-align:center}
+.modal-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.modal-body{padding:28px 32px}
+.modal-form{display:flex;flex-direction:column;gap:14px}
+.modal-form input{background:rgba(255,255,255,.07);border:1px solid var(--s700);
+  border-radius:2px;color:#fff;font-family:var(--sans);font-size:13px;
+  padding:12px 14px;outline:none;width:100%;transition:border-color .2s}
+.modal-form input::placeholder{color:var(--s400)}
+.modal-form input:focus{border-color:var(--gold)}
+.modal-form select{background:rgba(255,255,255,.07);border:1px solid var(--s700);
+  border-radius:2px;color:var(--s100);font-size:13px;padding:12px 14px;
+  outline:none;width:100%;appearance:none}
+.modal-form select option{background:var(--s800)}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;
+  color:var(--s400);font-size:22px;cursor:pointer;transition:color .2s;line-height:1}
+.modal-close:hover{color:var(--gold)}
+.modal-foot{padding:0 32px 28px;display:flex;gap:10px;align-items:center}
+.modal-foot .note{flex:1}
+
+/* ═══ CHAT DRAWER ═══════════════════════════════════════════ */
+#chat-drawer{
+  position:fixed;bottom:0;right:var(--rw);width:400px;
+  background:var(--s800);border:1px solid var(--s700);border-bottom:none;
+  border-radius:6px 6px 0 0;z-index:400;
+  transform:translateY(calc(100% - 46px));transition:transform .3s;
+  display:flex;flex-direction:column;max-height:560px;
+}
+#chat-drawer.open{transform:translateY(0)}
+.cd-header{padding:0 16px;height:46px;display:flex;align-items:center;
+  justify-content:space-between;cursor:pointer;flex-shrink:0}
+.cd-title{font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:10px}
+.cd-dot{width:8px;height:8px;border-radius:50%;background:#4caf50;flex-shrink:0}
+.cd-controls{display:flex;gap:8px}
+.cd-ctrl{background:none;border:none;color:var(--s400);cursor:pointer;
+  font-size:14px;transition:color .2s;padding:4px}
+.cd-ctrl:hover{color:var(--gold)}
+.cd-tabs{display:flex;border-bottom:1px solid var(--s700);flex-shrink:0}
+.cd-tab{flex:1;padding:9px 0;font-size:9.5px;letter-spacing:0.09em;
+  text-transform:uppercase;color:var(--s400);cursor:pointer;
+  border-bottom:2px solid transparent;transition:all .2s;background:none;
+  border-top:none;border-left:none;border-right:none;text-align:center}
+.cd-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.cd-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.cd-messages::-webkit-scrollbar{width:3px}
+.cd-messages::-webkit-scrollbar-thumb{background:var(--s600);border-radius:2px}
+.msg{max-width:80%}
+.msg-you{align-self:flex-end}
+.msg-bubble{padding:10px 13px;border-radius:12px 12px 2px 12px;
+  font-size:12.5px;line-height:1.6}
+.msg-you .msg-bubble{background:var(--cu600);color:#fff;border-radius:12px 12px 12px 2px}
+.msg-other .msg-bubble{background:rgba(255,255,255,.07);color:var(--s200)}
+.msg-who{font-size:10px;letter-spacing:0.07em;color:var(--s400);
+  margin-bottom:3px;padding-left:2px}
+.msg-you .msg-who{text-align:right;padding-right:2px}
+.msg-time{font-size:9.5px;color:#93a8b0;margin-top:3px}
+.msg-you .msg-time{text-align:right}
+.cd-input-area{padding:12px;border-top:1px solid var(--s700);
+  display:flex;gap:8px;flex-shrink:0}
+.cd-input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--s700);
+  border-radius:16px;color:#fff;font-family:var(--sans);font-size:12.5px;
+  padding:9px 14px;outline:none;transition:border-color .2s}
+.cd-input::placeholder{color:var(--s400)}
+.cd-input:focus{border-color:var(--gold)}
+.cd-send{background:var(--cu600);color:#fff;border:none;
+  width:34px;height:34px;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .2s}
+.cd-send:hover{background:var(--cu500)}
+.cd-send svg{width:14px;height:14px;fill:#fff}
+.chat-fab{position:fixed;bottom:24px;right:calc(var(--rw) + 24px);
+  background:var(--cu600);color:#fff;border:none;width:52px;height:52px;
+  border-radius:50%;cursor:pointer;font-size:22px;
+  box-shadow:0 4px 20px rgba(176,115,63,.4);transition:all .2s;z-index:399;
+  display:flex;align-items:center;justify-content:center}
+.chat-fab:hover{background:var(--cu500);transform:scale(1.05)}
+.fab-badge{position:absolute;top:-2px;right:-2px;background:#e53e3e;
+  color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:bold}
+
+/* ═══ COMMUNITY SECTION ═════════════════════════════════════ */
+#community{background:var(--s900);color:#fff}
+#community .sec-title{color:var(--gold)}
+#community .sec-tag{color:var(--cu400)}
+#community .divider{background:var(--cu600)}
+.comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.comm-card{background:rgba(255,255,255,.04);border:1px solid var(--s700);
+  border-radius:3px;padding:28px;transition:background .2s;cursor:pointer}
+.comm-card:hover{background:rgba(200,169,110,.07)}
+.comm-card-icon{font-size:28px;margin-bottom:14px}
+.comm-card h3{font-family:var(--serif);font-size:17px;font-weight:normal;
+  color:var(--gold);margin-bottom:8px}
+.comm-card p{font-size:13px;color:var(--s200);line-height:1.75}
+.comm-card .cc-cta{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--cu400);margin-top:14px;display:block}
+.comm-card .cc-cta:hover{color:var(--gold)}
+.member-avatars{display:flex;margin-top:14px}
+.m-av{width:30px;height:30px;border-radius:50%;
+  background:var(--cu500);border:2px solid var(--s900);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:#fff;margin-left:-8px;font-weight:bold}
+.m-av:first-child{margin-left:0}
+.m-av-count{font-size:10px;color:var(--s400);margin-left:10px;align-self:center}
+
+/* ═══ CARD GRID ═════════════════════════════════════════════ */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--s100);border-top:3px solid var(--cu500);
+  padding:28px 24px;border-radius:2px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 8px 28px rgba(44,58,66,.1)}
+.card-icon{font-size:24px;margin-bottom:14px}
+.card h3{font-family:var(--serif);font-size:16px;font-weight:normal;
+  color:var(--s800);margin-bottom:8px}
+.card p{font-size:13px;line-height:1.75;color:var(--tm)}
+
+/* ═══ RESPONSIVE ════════════════════════════════════════════ */
+@media(max-width:1100px){
+  :root{--rw:0px}
+  #tips-panel{display:none}
+  main{margin-right:0}
+}
+@media(max-width:768px){
+  :root{--lw:0px}
+  #sidebar{width:270px}
+  main{margin-left:0}
+  #auth-bar{left:0}
+  #founder{grid-template-columns:1fr;gap:28px;padding:40px 24px}
+  .dual-grid,.int-grid,.bgc-grid,.contact-grid,.comm-grid,.tgrid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .tool-panel.active{grid-template-columns:1fr}
+  section{padding:40px 24px}
+  #chat-drawer{width:auto;left:8px;right:8px}
+}
+/* Hero stacks to one column on tablet/mobile (overrides the inline 2-col grid) */
+@media(max-width:900px){
+  #hero-grid{grid-template-columns:1fr!important;min-height:auto!important}
+  #hero-grid>div{border-right:none!important;padding:40px 28px!important}
+  #hero-grid>div:first-child{padding:56px 28px 8px!important}
+}
+#menu-toggle{display:none;position:fixed;top:54px;left:12px;z-index:200;
+  background:var(--s800);border:none;color:var(--gold);font-size:20px;
+  width:38px;height:38px;cursor:pointer;border-radius:2px;
+  align-items:center;justify-content:center}
+@media(max-width:768px){#menu-toggle{display:flex}}
+
+/* ═══ LINKEDIN MOCK ═════════════════════════════════════════ */
+.li-mock{background:#fff;border-radius:4px;overflow:hidden;
+  box-shadow:0 4px 20px rgba(44,58,66,.12)}
+.li-banner{height:64px;background:linear-gradient(135deg,var(--s700),var(--cu700))}
+.li-av{width:68px;height:68px;border-radius:50%;background:var(--cu500);
+  border:4px solid #fff;margin:-34px 0 0 18px;display:flex;align-items:center;
+  justify-content:center;font-family:var(--serif);font-size:22px;color:#fff}
+.li-info{padding:6px 18px 18px}
+.li-name{font-weight:bold;font-size:16px;color:var(--s800);margin-bottom:3px}
+.li-hl{font-size:12.5px;color:var(--tm);margin-bottom:8px;line-height:1.5}
+.li-badge{display:inline-block;background:var(--cu300);color:var(--cu700);
+  font-size:9.5px;padding:2px 8px;border-radius:10px;letter-spacing:0.06em}
+.li-sec{padding:14px 18px;border-top:1px solid var(--s100)}
+.li-sec-t{font-size:11px;font-weight:bold;color:var(--s800);
+  margin-bottom:7px;text-transform:uppercase;letter-spacing:0.08em}
+.li-sec p{font-size:12px;color:var(--tm);line-height:1.7}
+.score-bar{height:4px;background:var(--s100);border-radius:2px;margin-top:8px}
+.score-fill{height:100%;background:linear-gradient(90deg,var(--cu600),var(--gold));border-radius:2px}
+
+/* ═══ VISUAL-GUIDE OVERRIDES ════════════════════════════════
+   Class rubric: content text ≥14px (primary body 15px); tiny
+   uppercase accent labels floored at 11–12px; line length ≤80ch. */
+/* — content / reading / controls → 14px+ — */
+nav a, nav ul ul a,
+.auth-link, .auth-btn, .user-name, .user-link,
+.tips-tab, .tips-search input, .tips-search button, .tips-refresh,
+.tip-blurb,
+.aud-head p, .svc-list li, .ttab,
+textarea, select, .t-input, .btn-go, .out-body, .out-ph, .note,
+.firm-chip, .q-list li, .video-mock p, .fi, .pkg p, .step p,
+.tcard p, .tauthor, .trole, .ci p,
+.cform input, .cform select, .cform textarea,
+.modal-head p, .modal-tab, .modal-form input, .modal-form select,
+.cd-tab, .msg-bubble, .cd-input,
+.comm-card p, .comm-card .cc-cta, .m-av-count, .card p,
+.li-hl, .li-sec p, .li-sec-t, .btn
+{ font-size:14px; }
+/* — slightly larger headings-of-cards / panel titles & primary paragraphs — */
+.tip-headline, .tips-title { font-size:15px; }
+.sec-lead, .founder-bio { font-size:15px; max-width:60ch; }
+.aud-head p, .step p, .tcard p, .comm-card p, .card p, .li-sec p { line-height:1.7; }
+/* — tiny uppercase ACCENT labels: keep small but floor at 11–12px — */
+.brand-tag, .nav-head, .tip-source, .tip-date, .founder-tag,
+.founder-photo-label, .stat-label, .sec-tag, .out-label,
+.msg-who, .msg-time, .li-badge { font-size:11px; }
+.tlabel, .fl, .pkg-price, .ci h4 { font-size:12px; }
+</style>
+</head>
+<body>
+
+<!-- WCAG 2.1 AA: Skip navigation link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ═══ MOBILE TOGGLE ════════════════════════════════════════ -->
+<button id="menu-toggle" aria-label="Open navigation menu" aria-controls="sidebar" aria-expanded="false" onclick="toggleNav()">☰</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     LEFT SIDEBAR — NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<aside id="sidebar">
+  <button class="sb-collapse" id="sb-collapse" onclick="toggleNav(true)"
+          aria-label="Collapse navigation panel" aria-controls="sidebar" aria-expanded="true"
+          title="Collapse navigation">
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" aria-hidden="true">
+      <line x1="3" y1="3" x2="11" y2="11"/><line x1="11" y1="3" x2="3" y2="11"/>
+    </svg>
+  </button>
+  <div class="sb-logo">
+    <svg class="sconce" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="60%" r="50%">
+          <stop offset="0%" stop-color="#f5c87a" stop-opacity=".9"/>
+          <stop offset="100%" stop-color="#c49a6c" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c49a6c"/><stop offset="100%" stop-color="#8a5c38"/>
+        </linearGradient>
+        <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#c8a96e"/><stop offset="100%" stop-color="#6b4c2a"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="100" cy="80" rx="88" ry="68" fill="url(#g1)" opacity=".5"/>
+      <ellipse cx="100" cy="118" rx="12" ry="5" fill="#8a5c38"/>
+      <g stroke="#a0733f" stroke-width="1.2" fill="none" opacity=".7">
+        <line x1="100" y1="116" x2="84" y2="122"/><line x1="100" y1="116" x2="91" y2="123"/>
+        <line x1="100" y1="116" x2="100" y2="124"/><line x1="100" y1="116" x2="109" y2="123"/>
+        <line x1="100" y1="116" x2="116" y2="122"/>
+      </g>
+      <path d="M100 115 Q100 80 100 50" stroke="url(#gs)" stroke-width="2" fill="none"/>
+      <path d="M100 55 Q94 38 100 28 Q106 38 100 55" fill="url(#gl)" opacity=".9"/>
+      <path d="M100 65 Q91 50 97 38 Q105 52 100 65" fill="#b07840" opacity=".75"/>
+      <path d="M100 65 Q109 50 103 38 Q95 52 100 65" fill="#b07840" opacity=".75"/>
+      <ellipse cx="100" cy="75" rx="6" ry="8" fill="#f5c87a" opacity=".8"/>
+      <path d="M100 100 Q78 92 62 88" stroke="url(#gs)" stroke-width="1.8" fill="none"/>
+      <path d="M62 88 Q58 80 65 73 Q70 82 62 88" fill="url(#gl)"/>
+      <path d="M74 92 Q70 83 77 76 Q82 85 74 92" fill="#b07840" opacity=".8"/>
+      <path d="M84 96 Q80 87 87 80 Q92 89 84 96" fill="#c49a6c" opacity=".8"/>
+      <path d="M62 88 Q44 84 28 86" stroke="url(#gs)" stroke-width="1.4" fill="none"/>
+      <path d="M28 86 Q22 80 26 72 Q34 78 28 86" fill="url(#gl)" opacity=".85"/>
+      <path d="M40 85 Q34 78 40 71 Q46 78 40 85" fill="#b07840" opacity=".75"/>
+      <path d="M12 88 Q10 82 16 76 Q20 83 12 88" fill="#8a5c38" opacity=".7"/>
+      <path d="M100 100 Q122 92 138 88" stroke="url(#gs)" stroke-width="1.8" fill="none"/>
+      <path d="M138 88 Q142 80 135 73 Q130 82 138 88" fill="url(#gl)"/>
+      <path d="M126 92 Q130 83 123 76 Q118 85 126 92" fill="#b07840" opacity=".8"/>
+      <path d="M116 96 Q120 87 113 80 Q108 89 116 96" fill="#c49a6c" opacity=".8"/>
+      <path d="M138 88 Q156 84 172 86" stroke="url(#gs)" stroke-width="1.4" fill="none"/>
+      <path d="M172 86 Q178 80 174 72 Q166 78 172 86" fill="url(#gl)" opacity=".85"/>
+      <path d="M160 85 Q166 78 160 71 Q154 78 160 85" fill="#b07840" opacity=".75"/>
+      <path d="M188 88 Q190 82 184 76 Q180 83 188 88" fill="#8a5c38" opacity=".7"/>
+      <ellipse cx="62" cy="88" rx="5" ry="4" fill="#f5c87a" opacity=".55"/>
+      <ellipse cx="138" cy="88" rx="5" ry="4" fill="#f5c87a" opacity=".55"/>
+      <ellipse cx="100" cy="100" rx="7" ry="5" fill="#f5c87a" opacity=".6"/>
+    </svg>
+    <div class="brand-name">Leslie Simon<br>Talent</div>
+    <div class="brand-tag">Executive Recruitment &amp; Career Intelligence</div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#founder" class="active">The Firm</a></li>
+      <li><a href="#community">Community</a></li>
+      <div class="nav-head">For Candidates</div>
+      <ul>
+        <li><a href="#tools">AI Polish — CV &amp; LinkedIn</a></li>
+        <li><a href="#interview">Interview Preparation</a></li>
+        <li><a href="#services">All Services</a></li>
+      </ul>
+      <div class="nav-head">For Clients</div>
+      <ul>
+        <li><a href="#vetting">Candidate Vetting</a></li>
+        <li><a href="#background">Background Checks</a></li>
+      </ul>
+      <div class="nav-head">Company</div>
+      <ul>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </ul>
+  </nav>
+
+  <div class="sb-footer">© 2025 Leslie Simon Recruiting<br>hello@lesliesimonrecruiting.com</div>
+</aside>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TOP AUTH BAR
+════════════════════════════════════════════════════════════ -->
+<div id="auth-bar">
+  <div id="guest-bar" style="display:flex;align-items:center;gap:12px">
+    <span style="font-size:14px;color:var(--s400);letter-spacing:0.06em">Already a member?</span>
+    <button class="auth-link" onclick="openModal('login')">Sign In</button>
+    <button class="auth-btn" onclick="openModal('signup')">Create Account</button>
+  </div>
+  <div id="user-bar">
+    <div class="user-avatar" id="user-initials">JS</div>
+    <span class="user-name" id="user-display-name">Jordan S.</span>
+    <button class="user-link" onclick="toggleChat()">💬 Messages</button>
+    <button class="user-link" onclick="signOut()">Sign Out</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     RIGHT PANEL — LIVE TIPS FEED
+════════════════════════════════════════════════════════════ -->
+<aside id="tips-panel" aria-label="Industry intelligence feed">
+  <div class="tips-header">
+    <div class="tips-title">Intelligence Feed</div>
+    <div class="tips-tabs" role="tablist" aria-label="Feed category">
+      <button class="tips-tab active" id="tab-candidates-btn" role="tab" aria-selected="true"
+              aria-controls="tips-scroll" onclick="switchTips('candidates',this)">Candidates</button>
+      <button class="tips-tab" id="tab-corporate-btn" role="tab" aria-selected="false"
+              aria-controls="tips-scroll" onclick="switchTips('corporate',this)">Corporate</button>
+    </div>
+    <div class="tips-search">
+      <input type="text" id="tips-query" aria-label="Search the intelligence feed"
+             placeholder="Search tips..." onkeydown="if(event.key==='Enter')fetchTips()"/>
+      <button onclick="fetchTips()" aria-label="Search feed">Search</button>
+    </div>
+  </div>
+
+  <div class="tips-scroll" id="tips-scroll" role="tabpanel" tabindex="0"
+       aria-live="polite" aria-label="Feed results">
+    <!-- Populated by JS -->
+  </div>
+
+  <button class="tips-refresh" onclick="rotateTips()" aria-label="Refresh feed">
+    <span id="refresh-icon" aria-hidden="true">↻</span> Refresh Feed
+  </button>
+</aside>
+
+<!-- Right panel collapse tab — chevron arrows toggle the intelligence feed -->
+<button class="tips-toggle" id="tips-toggle" onclick="toggleTips()"
+        aria-label="Toggle intelligence feed" aria-controls="tips-panel" aria-expanded="true"
+        title="Toggle feed">
+  <svg viewBox="0 0 10 16" fill="none" stroke="currentColor" stroke-width="1.8"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="7,2 2,8 7,14"/>
+  </svg>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO — ON Partners-inspired, WCAG 2.1 AA compliant
+     Contrast: white on #2c3a42 = 11.7:1 ✓ | gold on #2c3a42 = 5.3:1 ✓
+════════════════════════════════════════════════════════════ -->
+<section id="founder" aria-label="About Leslie Simon Recruiting" style="
+  background: linear-gradient(160deg, #1e2a30 0%, #28343b 100%);
+  padding: 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- Decorative: subtle radial glow (non-informational, aria-hidden) -->
+  <div aria-hidden="true" style="
+    position:absolute;top:-80px;right:22%;width:460px;height:460px;
+    background:radial-gradient(ellipse,rgba(196,154,108,.07) 0%,transparent 70%);
+    pointer-events:none;
+  "></div>
+
+  <!-- Decorative brand mark (sconce), faded — fills the empty right side -->
+  <svg class="hero-mark" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <ellipse cx="100" cy="80" rx="88" ry="68" fill="#c8a96e" opacity=".18"/>
+    <ellipse cx="100" cy="118" rx="12" ry="5" fill="#8a5c38"/>
+    <g stroke="#a0733f" stroke-width="1.2" fill="none" opacity=".7">
+      <line x1="100" y1="116" x2="84" y2="122"/><line x1="100" y1="116" x2="91" y2="123"/>
+      <line x1="100" y1="116" x2="100" y2="124"/><line x1="100" y1="116" x2="109" y2="123"/>
+      <line x1="100" y1="116" x2="116" y2="122"/>
+    </g>
+    <path d="M100 115 Q100 80 100 50" stroke="#c49a6c" stroke-width="2" fill="none"/>
+    <path d="M100 55 Q94 38 100 28 Q106 38 100 55" fill="#c8a96e" opacity=".9"/>
+    <path d="M100 65 Q91 50 97 38 Q105 52 100 65" fill="#b07840" opacity=".75"/>
+    <path d="M100 65 Q109 50 103 38 Q95 52 100 65" fill="#b07840" opacity=".75"/>
+    <ellipse cx="100" cy="75" rx="6" ry="8" fill="#f5c87a" opacity=".8"/>
+    <path d="M100 100 Q78 92 62 88" stroke="#c49a6c" stroke-width="1.8" fill="none"/>
+    <path d="M62 88 Q58 80 65 73 Q70 82 62 88" fill="#c8a96e"/>
+    <path d="M74 92 Q70 83 77 76 Q82 85 74 92" fill="#b07840" opacity=".8"/>
+    <path d="M84 96 Q80 87 87 80 Q92 89 84 96" fill="#c49a6c" opacity=".8"/>
+    <path d="M62 88 Q44 84 28 86" stroke="#c49a6c" stroke-width="1.4" fill="none"/>
+    <path d="M28 86 Q22 80 26 72 Q34 78 28 86" fill="#c8a96e" opacity=".85"/>
+    <path d="M40 85 Q34 78 40 71 Q46 78 40 85" fill="#b07840" opacity=".75"/>
+    <path d="M12 88 Q10 82 16 76 Q20 83 12 88" fill="#8a5c38" opacity=".7"/>
+    <path d="M100 100 Q122 92 138 88" stroke="#c49a6c" stroke-width="1.8" fill="none"/>
+    <path d="M138 88 Q142 80 135 73 Q130 82 138 88" fill="#c8a96e"/>
+    <path d="M126 92 Q130 83 123 76 Q118 85 126 92" fill="#b07840" opacity=".8"/>
+    <path d="M116 96 Q120 87 113 80 Q108 89 116 96" fill="#c49a6c" opacity=".8"/>
+    <path d="M138 88 Q156 84 172 86" stroke="#c49a6c" stroke-width="1.4" fill="none"/>
+    <path d="M172 86 Q178 80 174 72 Q166 78 172 86" fill="#c8a96e" opacity=".85"/>
+    <path d="M160 85 Q166 78 160 71 Q154 78 160 85" fill="#b07840" opacity=".75"/>
+    <path d="M188 88 Q190 82 184 76 Q180 83 188 88" fill="#8a5c38" opacity=".7"/>
+    <ellipse cx="62" cy="88" rx="5" ry="4" fill="#f5c87a" opacity=".55"/>
+    <ellipse cx="138" cy="88" rx="5" ry="4" fill="#f5c87a" opacity=".55"/>
+    <ellipse cx="100" cy="100" rx="7" ry="5" fill="#f5c87a" opacity=".6"/>
+  </svg>
+
+  <!-- HERO: single-column headline -->
+  <div id="hero-grid" style="
+    display:grid;
+    grid-template-columns:1fr;
+    min-height:380px;
+    position:relative;
+    z-index:1;
+  ">
+    <!-- Large bold headline -->
+    <div style="
+      padding:72px 64px 64px 64px;
+      display:flex;flex-direction:column;justify-content:center;
+      align-items:center;text-align:center;
+    ">
+      <!-- Eyebrow -->
+      <p style="
+        font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+        color:#c49a6c;margin-bottom:22px;
+        font-family:var(--sans);
+      ">Leslie Simon Recruiting · Est. 2015</p>
+
+      <!-- Main headline — split for visual weight like ON Partners -->
+      <h1 style="font-family:var(--sans);font-weight:700;line-height:1.12;margin-bottom:16px;
+          font-size:clamp(34px,5vw,56px);letter-spacing:-0.02em;color:#ffffff;max-width:16ch;">
+        Boutique Talent Search <span style="color:#c8a96e;">&amp; Career Intelligence</span>
+      </h1>
+      <p style="
+        font-family:var(--sans);font-weight:300;
+        font-size:clamp(18px,2vw,26px);line-height:1.3;
+        color:#c5d2d8;letter-spacing:-0.01em;margin-bottom:0;
+      ">for Fashion, Lifestyle &amp; Consumer Brands</p>
+
+      <!-- Separator line — decorative -->
+      <div aria-hidden="true" style="width:60px;height:3px;background:#c8a96e;margin:32px 0;"></div>
+
+      <!-- Short proof statement -->
+      <p style="
+        font-size:14px;line-height:1.8;color:#c5d2d8;
+        max-width:380px;margin-bottom:36px;
+      ">
+        Insider brand experience and market knowledge — the agility of a boutique firm with national reach.
+      </p>
+
+      <!-- CTA row -->
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <button
+          class="btn btn-cu"
+          onclick="openModal('signup')"
+          style="font-size:14px;padding:13px 28px;"
+          aria-label="Create a candidate account">
+          I'm a Candidate →
+        </button>
+        <a
+          href="#contact"
+          class="btn btn-outline"
+          style="font-size:14px;padding:13px 28px;"
+          aria-label="Engage Leslie for an executive search">
+          I'm Hiring →
+        </a>
+      </div>
+
+      <!-- Photo credit strip -->
+      <div style="margin-top:48px;display:flex;align-items:center;gap:14px">
+        <div style="
+          width:54px;height:54px;border-radius:50%;
+          border:2px solid #c49a6c;overflow:hidden;flex-shrink:0;
+          background:linear-gradient(145deg,#3d4f59,#8a5c38);
+          display:flex;align-items:center;justify-content:center;
+        ">
+          <img
+            src="leslie-simon.jpg"
+            alt="Leslie Simon, Founder"
+            style="width:100%;height:100%;object-fit:cover;object-position:center top"
+            onerror="this.style.display='none'"
+          />
+        </div>
+        <div>
+          <p style="font-size:14px;font-weight:600;color:#fff;margin-bottom:2px;">Leslie Simon</p>
+          <p style="font-size:12px;color:#93a8b0;letter-spacing:0.06em">
+            Director of Talent &amp; Engagement, Randa Apparel &amp; Accessories<br>
+            Founder, Leslie Simon Recruiting · Denver, CO
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROOF STRIP — stats bar across bottom of hero -->
+  <div
+    aria-label="Key statistics"
+    style="
+      background:rgba(0,0,0,.35);
+      border-top:1px solid rgba(200,169,110,.18);
+      display:flex;
+      justify-content:center;
+      gap:0;
+    "
+  >
+    <div style="flex:1;padding:22px 32px;text-align:center;border-right:1px solid rgba(200,169,110,.12)">
+      <div style="font-family:var(--serif);font-size:28px;color:#c8a96e;line-height:1">25+</div>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#93a8b0;margin-top:5px">Years in Industry</div>
+    </div>
+    <div style="flex:1;padding:22px 32px;text-align:center;border-right:1px solid rgba(200,169,110,.12)">
+      <div style="font-family:var(--serif);font-size:28px;color:#c8a96e;line-height:1">11+</div>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#93a8b0;margin-top:5px">Years Recruiting</div>
+    </div>
+    <div style="flex:1;padding:22px 32px;text-align:center;border-right:1px solid rgba(200,169,110,.12)">
+      <div style="font-family:var(--serif);font-size:28px;color:#c8a96e;line-height:1">30+</div>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#93a8b0;margin-top:5px">Brands in RAA Portfolio</div>
+    </div>
+    <div style="flex:1;padding:22px 32px;text-align:center;border-right:1px solid rgba(200,169,110,.12)">
+      <div style="font-family:var(--serif);font-size:28px;color:#c8a96e;line-height:1">All</div>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#93a8b0;margin-top:5px">Industries Served</div>
+    </div>
+    <div style="flex:1;padding:22px 32px;text-align:center">
+      <div style="font-family:var(--serif);font-size:28px;color:#c8a96e;line-height:1">AI</div>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#93a8b0;margin-top:5px">Powered by Claude</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT + SEARCH PROCESS — Dynamic Synergy content adapted
+════════════════════════════════════════════════════════════ -->
+<section
+  id="about"
+  aria-labelledby="about-heading"
+  style="padding:64px 64px;background:#f2f5f7;"
+>
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start">
+    <div>
+      <p class="sec-tag">About the Firm</p>
+      <h2 id="about-heading" class="sec-title">Personal attention.<br>Institutional reach.</h2>
+      <div class="divider"></div>
+      <p style="font-size:14px;line-height:1.9;color:var(--tm);margin-bottom:18px">
+        Leslie Simon Recruiting is a boutique talent search and advisory firm with national reach. We bring insider experience, market knowledge, trusted contacts, and emotional intelligence to deliver top-tier talent to the most discerning brands.
+      </p>
+      <p style="font-size:14px;line-height:1.9;color:var(--tm);margin-bottom:18px">
+        Unlike larger, more impersonal firms, Leslie Simon Recruiting guides clients through all phases of the search and hiring process — offering research, insight, and problem-solving to help you make truly inspired team choices.
+      </p>
+      <p style="font-size:14px;line-height:1.9;color:var(--tm);margin-bottom:28px">
+        We engage a limited number of search assignments at any time to ensure every client receives the commitment, thoroughness, and personal follow-through that defines our reputation.
+      </p>
+      <blockquote style="
+        border-left:3px solid var(--cu500);padding:16px 22px;
+        background:#fff;border-radius:0 2px 2px 0;
+        font-style:italic;font-size:14.5px;color:var(--tm);line-height:1.8;
+      ">
+        "Great businesses — the kind that create wealth and make the world a better place — rarely come down to one person. It's the dedicated company team, operating with shared beliefs, values, and vision, that makes the real magic happen."
+        <footer style="font-style:normal;font-size:14px;color:var(--cu600);margin-top:10px;font-weight:600">
+          — Leslie Simon, Founder
+        </footer>
+      </blockquote>
+    </div>
+
+    <!-- SEARCH PROCESS — from Dynamic Synergy, elevated -->
+    <div>
+      <p class="sec-tag">Our Search Process</p>
+      <h2 class="sec-title">End-to-end.<br>Every time.</h2>
+      <div class="divider"></div>
+      <ol
+        aria-label="Search process steps"
+        style="list-style:none;display:flex;flex-direction:column;gap:0"
+      >
+        <!-- Steps with counter managed via CSS counter -->
+        <style>
+          .process-ol{counter-reset:proc}
+          .process-step{
+            counter-increment:proc;
+            display:flex;align-items:flex-start;gap:14px;
+            padding:11px 0;border-bottom:1px solid var(--s100);
+          }
+          .process-step::before{
+            content:counter(proc,decimal-leading-zero);
+            font-family:var(--serif);font-size:15px;color:var(--cu400);
+            min-width:26px;flex-shrink:0;line-height:1.4;
+          }
+          .process-step span{font-size:14px;color:var(--tm);line-height:1.6}
+        </style>
+        <ol class="process-ol" aria-label="The 15-step Leslie Simon search process">
+          <li class="process-step"><span>Job definition and role scoping</span></li>
+          <li class="process-step"><span>Candidate specification and success profile</span></li>
+          <li class="process-step"><span>Search plan and outreach strategy</span></li>
+          <li class="process-step"><span>Candidate identification and interest</span></li>
+          <li class="process-step"><span>Initial screening conversations</span></li>
+          <li class="process-step"><span>AI-assisted résumé and LinkedIn polish</span></li>
+          <li class="process-step"><span>Second screenings and first interviews</span></li>
+          <li class="process-step"><span>Candidate presentation to client</span></li>
+          <li class="process-step"><span>First client/candidate meeting coordination</span></li>
+          <li class="process-step"><span>Selection assistance and shortlist refinement</span></li>
+          <li class="process-step"><span>Background screening (Checkr / Sterling API)</span></li>
+          <li class="process-step"><span>In-depth reference checks</span></li>
+          <li class="process-step"><span>Offer negotiation and issue resolution</span></li>
+          <li class="process-step"><span>Offer acceptance and onboarding support</span></li>
+          <li class="process-step"><span>Post-placement follow-up (30 / 60 / 90 days)</span></li>
+        </ol>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     LESLIE'S CAREER STORY — replaces old founder bio block
+════════════════════════════════════════════════════════════ -->
+<section id="leslie" aria-labelledby="leslie-heading" style="padding:64px 64px;background:#fff">
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start">
+    <!-- Photo column -->
+    <div style="
+      width:200px;flex-shrink:0;
+      border:3px solid var(--cu500);border-radius:3px;overflow:hidden;
+      position:relative;background:linear-gradient(145deg,var(--s700),var(--cu700));
+    ">
+      <img
+        src="leslie-simon-portrait.jpg"
+        alt="Leslie Simon, founder of Leslie Simon Recruiting, smiling and holding a coffee mug"
+        style="width:100%;display:block;object-fit:cover;object-position:center top"
+        onerror="this.style.display='none'"
+      />
+      <div style="
+        background:rgba(0,0,0,.5);padding:12px 14px;
+        font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cu300);
+        text-align:center;line-height:1.6;
+      ">
+        Leslie Simon<br>Founder &amp; Principal
+      </div>
+    </div>
+
+    <!-- Bio column -->
+    <div>
+      <p class="sec-tag">The Person Behind the Firm</p>
+      <h2 id="leslie-heading" class="sec-title">25 years. One conviction:<br><em style="color:var(--cu600)">find the right person.</em></h2>
+      <div class="divider"></div>
+
+      <p style="font-size:14px;line-height:1.9;color:var(--tm);margin-bottom:16px">
+        Leslie Simon's career runs from the sales floor to the boardroom — a 25-year through-line that gives her a recruiter's empathy and a brand executive's discernment. She began at Randa Accessories in 1997 as a Senior Field Retail Merchandiser (earning Rookie of the Year, then Field Merchandiser of the Year), and rose through progressive leadership roles to Senior Product Merchandiser, developing $MM account strategies for Ben Sherman, Kohl's Croft &amp; Barrow, and other leading brands.
+      </p>
+      <p style="font-size:14px;line-height:1.9;color:var(--tm);margin-bottom:16px">
+        Her creative chapter as Creative Director of Product at The Tie Bar (2012–2015) doubled annual sales in under two years, launched the "EDIT Program" exclusively for Nordstrom, and produced the Dwyane Wade celebrity accessories line. In 2015, she founded Leslie Simon Recruiting — serving all industries, with deep roots in fashion and consumer brands. Since 2018, she has concurrently served as Director of Talent &amp; Engagement at Randa Apparel &amp; Accessories, a global powerhouse with 30+ brands.
+      </p>
+
+      <div style="display:flex;gap:36px;margin-top:24px;flex-wrap:wrap">
+        <div>
+          <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cu600);margin-bottom:6px">Education</p>
+          <p style="font-size:14px;color:var(--tm);line-height:1.8">
+            Arizona State University<br>
+            University of Colorado Denver — B.A. Fine/Studio Arts<br>
+            Collège LaSalle, Montréal — Fashion Merchandising &amp; Marketing
+          </p>
+        </div>
+        <div>
+          <p style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cu600);margin-bottom:6px">Contact</p>
+          <p style="font-size:14px;color:var(--tm);line-height:1.8">
+            hello@lesliesimonrecruiting.com<br>
+            Denver, CO · National Reach<br>
+            linkedin.com/in/lesliesimonrecruiting
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-cu" onclick="openModal('signup')" aria-label="Create a candidate account">Create Candidate Account</button>
+        <button class="btn btn-chat" onclick="openChat('leslie')" aria-label="Send a direct message to Leslie Simon">Message Leslie →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AI POLISH TOOLS ───────────────────────────────────── -->
+<section id="tools">
+  <div class="sec-tag">AI-Powered Polish — Candidates</div>
+  <h2 class="sec-title">Your career documents,<br>transformed in minutes.</h2>
+  <div class="divider"></div>
+  <p class="sec-lead">Paste your résumé, LinkedIn bio, or executive summary. Claude rewrites, restructures, and elevates every word — then explains each change so you understand the strategy.</p>
+
+  <div class="tool-tabs">
+    <button class="ttab active" onclick="switchTab('resume',this)">Résumé Polish</button>
+    <button class="ttab" onclick="switchTab('linkedin',this)">LinkedIn Bio</button>
+    <button class="ttab" onclick="switchTab('summary',this)">Executive Summary</button>
+    <button class="ttab" onclick="switchTab('cover',this)">Cover Letter</button>
+  </div>
+
+  <!-- RESUME -->
+  <div id="tab-resume" class="tool-panel active">
+    <div class="tool-in">
+      <div>
+        <div class="tlabel">Target Role</div>
+        <select><option>Select target role...</option>
+          <option>Chief Executive Officer</option><option>Chief Marketing Officer</option>
+          <option>VP of Merchandising</option><option>Director of Talent Acquisition</option>
+          <option>Creative Director</option><option>VP of Sales / Account Management</option>
+          <option>Brand President</option><option>Director, Product Development</option>
+          <option>Head of E-Commerce</option><option>Buying Director / DMM / GMM</option>
+          <option>Director of Operations</option><option>VP of Human Resources</option>
+        </select>
+      </div>
+      <div>
+        <div class="tlabel">Paste Your Current Résumé</div>
+        <textarea placeholder="Paste your résumé here — any format. The AI restructures language, quantifies achievements, and optimizes for ATS keywords..."></textarea>
+      </div>
+      <div style="display:flex;align-items:center">
+        <button class="btn-go" onclick="runAI('resume')">Polish Résumé →</button>
+        <div class="loading-ring" id="spinner-resume"></div>
+      </div>
+      <p class="note">Your data is encrypted in transit and never stored beyond this session. Powered by Claude AI.</p>
+    </div>
+    <div class="tool-out">
+      <div class="out-label">AI-Polished Output</div>
+      <div class="out-body" id="output-resume"><span class="out-ph">Your polished résumé appears here. The AI will:\n\n  • Strengthen every bullet with action verbs and metrics\n  • Restructure for ATS compatibility and visual impact\n  • Surface transferable skills for your target role\n  • Annotate key changes with coaching rationale</span></div>
+    </div>
+  </div>
+
+  <!-- LINKEDIN -->
+  <div id="tab-linkedin" class="tool-panel">
+    <div class="tool-in">
+      <div>
+        <div class="tlabel">Current LinkedIn Headline</div>
+        <input class="t-input" type="text" placeholder="e.g. VP Merchandising at [Brand] | Fashion & Accessories | 12+ years"/>
+      </div>
+      <div>
+        <div class="tlabel">Current LinkedIn 'About' Section</div>
+        <textarea placeholder="Paste your About section here. The AI rewrites it to be compelling, keyword-rich, and optimized for recruiter search..."></textarea>
+      </div>
+      <div style="display:flex;align-items:center">
+        <button class="btn-go" onclick="runAI('linkedin')">Enhance Profile →</button>
+        <div class="loading-ring" id="spinner-linkedin"></div>
+      </div>
+    </div>
+    <div class="tool-out">
+      <div class="out-label">AI-Enhanced LinkedIn Copy</div>
+      <div class="out-body" id="output-linkedin"><span class="out-ph">Optimized LinkedIn content appears here — headline, About section, keyword density analysis, and completeness recommendations.</span></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div id="tab-summary" class="tool-panel">
+    <div class="tool-in">
+      <div>
+        <div class="tlabel">Industry &amp; Function</div>
+        <select><option>Select industry...</option>
+          <option>Fashion / Apparel / Accessories</option><option>Retail / E-Commerce</option>
+          <option>Lifestyle / Consumer Brands</option><option>Luxury Goods</option>
+          <option>Beauty / Personal Care</option><option>Hospitality / Restaurants</option>
+          <option>Technology / SaaS</option><option>Healthcare / Life Sciences</option>
+          <option>Financial Services</option><option>Entertainment / Media</option>
+        </select>
+      </div>
+      <div>
+        <div class="tlabel">Background Notes</div>
+        <textarea placeholder="Tell us your career in plain language — key achievements, firms, years, specialties. We'll craft a board-ready executive summary..."></textarea>
+      </div>
+      <div style="display:flex;align-items:center">
+        <button class="btn-go" onclick="runAI('summary')">Draft Summary →</button>
+        <div class="loading-ring" id="spinner-summary"></div>
+      </div>
+    </div>
+    <div class="tool-out">
+      <div class="out-label">Executive Summary Draft</div>
+      <div class="out-body" id="output-summary"><span class="out-ph">Your board-ready executive summary appears here — 150–200 words, third person, calibrated to your level and industry.</span></div>
+    </div>
+  </div>
+
+  <!-- COVER -->
+  <div id="tab-cover" class="tool-panel">
+    <div class="tool-in">
+      <div>
+        <div class="tlabel">Target Company &amp; Role</div>
+        <input class="t-input" type="text" placeholder="e.g. Goldman Sachs — Managing Director, Investment Banking"/>
+      </div>
+      <div>
+        <div class="tlabel">Your Background + Notes</div>
+        <textarea placeholder="Paste résumé highlights and any specific angle for this letter..."></textarea>
+      </div>
+      <div style="display:flex;align-items:center">
+        <button class="btn-go" onclick="runAI('cover')">Generate Letter →</button>
+        <div class="loading-ring" id="spinner-cover"></div>
+      </div>
+    </div>
+    <div class="tool-out">
+      <div class="out-label">Cover Letter Draft</div>
+      <div class="out-body" id="output-cover"><span class="out-ph">A targeted cover letter appears here — personalized to the company, role, and your specific narrative.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES DUAL AUDIENCE ────────────────────────────── -->
+<section id="services" style="background:#f2f5f7">
+  <div class="sec-tag">Services</div>
+  <h2 class="sec-title">Two sides of the same<br>placement equation.</h2>
+  <div class="divider"></div>
+  <div class="dual-grid">
+    <div class="aud-block">
+      <div class="aud-head">
+        <h3>For Candidates</h3>
+        <p>Your career story, told with clarity and conviction — optimized for both human readers and the ATS systems that gate every opportunity.</p>
+      </div>
+      <div class="aud-body">
+        <ul class="svc-list">
+          <li>AI-powered résumé rewriting and formatting</li>
+          <li>LinkedIn bio and headline optimization</li>
+          <li>Executive summary drafting from scratch</li>
+          <li>Interview coaching with firm-specific question banks</li>
+          <li>Video mock interview analysis and AI feedback</li>
+          <li>Salary negotiation intelligence reports</li>
+          <li>Community access — connect with peer candidates</li>
+          <li>Direct messaging with Leslie and Claude AI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="aud-block">
+      <div class="aud-head">
+        <h3>For Corporate Clients</h3>
+        <p>Vetting that goes beyond the résumé — AI-assisted profile analysis, credential verification, and background screening at scale.</p>
+      </div>
+      <div class="aud-body">
+        <ul class="svc-list">
+          <li>Candidate LinkedIn profile audit and scoring</li>
+          <li>Employment history consistency checks</li>
+          <li>Background check API (criminal, credit, education)</li>
+          <li>AI-generated candidate briefs and comparison reports</li>
+          <li>Culture-fit narrative assessment</li>
+          <li>Real-time talent pipeline management</li>
+          <li>Proactive candidate sourcing and outreach</li>
+          <li>Retained and contingency search models</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTERVIEW PREP ─────────────────────────────────────── -->
+<section id="interview">
+  <div class="sec-tag">Interview Intelligence</div>
+  <h2 class="sec-title">Prepare for the rooms<br>that change careers.</h2>
+  <div class="divider"></div>
+  <div class="int-grid">
+    <div>
+      <p style="font-size:14px;line-height:1.9;color:var(--tm);margin-bottom:22px">We maintain live question banks drawn from actual interviews at top-tier firms — updated continuously. Practice on video, receive AI coaching, enter every room prepared.</p>
+      <div class="sec-tag" style="margin-bottom:8px">Firm Question Sets</div>
+      <div class="firm-chips">
+        <span class="firm-chip">Nordstrom</span>
+        <span class="firm-chip">LVMH</span>
+        <span class="firm-chip">PVH Corp</span>
+        <span class="firm-chip">Tapestry</span>
+        <span class="firm-chip">Ralph Lauren</span>
+        <span class="firm-chip">VF Corporation</span>
+        <span class="firm-chip">Kering</span>
+        <span class="firm-chip">Richemont</span>
+        <span class="firm-chip">Authentic Brands</span>
+        <span class="firm-chip">Randa Apparel</span>
+      </div>
+      <div class="sec-tag" style="margin-bottom:6px">Sample — Creative / Merchandising Director Track</div>
+      <ul class="q-list">
+        <li><span class="q-num">1</span>Walk me through a product launch you led end-to-end. What was your process from trend identification to sell-in, and what drove the outcome?</li>
+        <li><span class="q-num">2</span>Tell me about a time a key account relationship was at risk. How did you identify it, and how did you turn it around?</li>
+        <li><span class="q-num">3</span>How do you balance the creative vision of the brand with the commercial realities of your retail partners?</li>
+        <li><span class="q-num">4</span>Describe the most significant team you've built or rebuilt. What did you look for, and how did you develop them?</li>
+      </ul>
+    </div>
+    <div>
+      <div class="sec-tag" style="margin-bottom:10px">Video Practice Module</div>
+      <div class="video-mock">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <p>Record · Review · Refine</p>
+      </div>
+      <p class="note" style="margin-top:14px">Record yourself answering questions. AI analyzes pacing, filler words, STAR method adherence, and content alignment — coaching notes auto-generated after each session.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CANDIDATE VETTING ──────────────────────────────────── -->
+<section id="vetting" style="background:#f2f5f7">
+  <div class="sec-tag">Corporate Services</div>
+  <h2 class="sec-title">Candidates you can<br>present with confidence.</h2>
+  <div class="divider"></div>
+  <p class="sec-lead">Before a candidate reaches your desk, we've cross-referenced their profile, validated credentials, and produced a structured brief — so your team evaluates substance, not paperwork.</p>
+  <div class="cgrid">
+    <div class="card"><div class="card-icon">🔍</div><h3>LinkedIn Profile Audit</h3><p>AI cross-references stated experience against LinkedIn data, publication dates, and endorsement patterns to surface inconsistencies.</p></div>
+    <div class="card"><div class="card-icon">📄</div><h3>Résumé Consistency</h3><p>Dates, titles, tenure gaps, and accomplishments are parsed and flagged against publicly verifiable records and industry norms.</p></div>
+    <div class="card"><div class="card-icon">📊</div><h3>Candidate Brief</h3><p>A structured one-pager — narrative summary, strengths, risk flags, culture-fit indicators — ready for committee review in 24 hours.</p></div>
+    <div class="card"><div class="card-icon">⚖️</div><h3>Credential Verification</h3><p>Education, professional licenses, certifications, and board memberships verified through issuing institutions and authoritative databases.</p></div>
+  </div>
+</section>
+
+<!-- ─── BACKGROUND CHECK ───────────────────────────────────── -->
+<section id="background">
+  <div class="sec-tag">Background Screening</div>
+  <h2 class="sec-title">Complete integrity<br>at every stage.</h2>
+  <div class="divider"></div>
+  <p class="sec-lead">Powered by Checkr and Sterling APIs — criminal history, credit (where permissible), civil court records, and global sanctions screening. FCRA-compliant, results in 24–72 hours.</p>
+  <div class="bgc-grid">
+    <div class="bgc-form">
+      <h3>Request a Background Check</h3>
+      <div class="fg"><label class="fl">Candidate Full Name</label><input type="text" class="fi" placeholder="First and Last Name"/></div>
+      <div class="fg"><label class="fl">Candidate Email</label><input type="text" class="fi" placeholder="candidate@email.com"/></div>
+      <div class="fg"><label class="fl">Screening Package</label>
+        <select class="fi"><option>Select package...</option>
+          <option>Essential — Criminal + Identity</option>
+          <option>Professional — Essential + Employment Verification</option>
+          <option>Executive — Professional + Credit + Global Sanctions</option>
+          <option>Board-Level — Full suite + Social Media Screen</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Your Name &amp; Firm</label><input type="text" class="fi" placeholder="Requesting party"/></div>
+      <button class="btn btn-cu" style="width:100%;text-align:center;display:block;padding:13px">Submit Screening Request →</button>
+      <p class="note" style="margin-top:14px;color:var(--tl)">All screenings require candidate consent per FCRA. Powered by Checkr / Sterling APIs.</p>
+    </div>
+    <div class="pkgs">
+      <div class="pkg"><h3>Essential</h3><p>National criminal database, SSN trace, sex offender registry, identity verification, global watchlist scan.</p><div class="pkg-price">Turnaround: 24 hours</div></div>
+      <div class="pkg"><h3>Professional</h3><p>Everything in Essential plus employment verification (last 3 positions), education verification, professional license check.</p><div class="pkg-price">Turnaround: 48 hours</div></div>
+      <div class="pkg"><h3>Executive</h3><p>Full Professional plus credit report, civil court records, global sanctions and PEP screening, and media search.</p><div class="pkg-price">Turnaround: 48–72 hours</div></div>
+      <div class="pkg" style="border-left-color:var(--gold)"><h3>Board-Level</h3><p>Full Executive suite plus comprehensive social media analysis, reputational intelligence, and a written risk summary.</p><div class="pkg-price">Turnaround: 72 hours</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMMUNITY ─────────────────────────────────────────── -->
+<section id="community">
+  <div class="sec-tag">Candidate Community</div>
+  <h2 class="sec-title">Connect. Share. Advance.</h2>
+  <div class="divider"></div>
+  <p style="font-size:14px;line-height:1.9;color:var(--s200);max-width:600px;margin-bottom:40px">Members get access to a private candidate community — peer forums, direct messaging with other professionals, and direct lines to Leslie Simon and our Claude AI advisor for career questions at any hour.</p>
+
+  <div class="comm-grid">
+    <div class="comm-card" onclick="openChat('community')">
+      <div class="comm-card-icon">💬</div>
+      <h3>Candidate Forum</h3>
+      <p>A private community of vetted professionals across finance, technology, and healthcare. Share intel, ask questions, and build relationships that outlast any single job search.</p>
+      <div class="member-avatars">
+        <div class="m-av">MK</div><div class="m-av">JR</div><div class="m-av">AS</div>
+        <div class="m-av">PW</div><div class="m-av">LT</div>
+        <span class="m-av-count">+218 members</span>
+      </div>
+      <span class="cc-cta">Enter Forum →</span>
+    </div>
+    <div class="comm-card" onclick="openChat('leslie')">
+      <div class="comm-card-icon">✦</div>
+      <h3>Direct Line to Leslie</h3>
+      <p>Members can send direct messages to Leslie Simon — for market intelligence, deal feedback, or a candid conversation about where your career is and where it should be heading.</p>
+      <p style="margin-top:12px;font-size:14px;color:var(--cu400)">Response time: within 1 business day</p>
+      <span class="cc-cta">Message Leslie →</span>
+    </div>
+    <div class="comm-card" onclick="openChat('claude')">
+      <div class="comm-card-icon">◈</div>
+      <h3>Claude AI Advisor</h3>
+      <p>Available 24/7, the Claude AI advisor answers career strategy questions, reviews your draft materials in real-time, suggests interview approaches, and helps you think through any career decision.</p>
+      <span class="cc-cta">Chat with Claude →</span>
+    </div>
+    <div class="comm-card" onclick="openModal('signup')">
+      <div class="comm-card-icon">⬡</div>
+      <h3>Create Your Account</h3>
+      <p>Set up your candidate profile in under two minutes. Upload your résumé, set your target role and timeline, and gain immediate access to all tools, the community, and Leslie's team.</p>
+      <span class="cc-cta">Get Started →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ────────────────────────────────────────────── -->
+<section id="process" style="background:#f2f5f7">
+  <div class="sec-tag">How It Works</div>
+  <h2 class="sec-title">From first conversation<br>to placed candidate.</h2>
+  <div class="divider"></div>
+  <div class="steps">
+    <div class="step"><h3>Discovery Call</h3><p>We learn your role, culture, comp range, and non-negotiables — or your career story, target, and timeline. 45 minutes that shape everything.</p></div>
+    <div class="step"><h3>AI Profile Build</h3><p>Résumé polish, LinkedIn optimization, and consistency analysis — producing a refined document set within 24 hours.</p></div>
+    <div class="step"><h3>Vetting &amp; Verification</h3><p>Background screening, credential verification, and LinkedIn cross-referencing completed before any candidate is presented.</p></div>
+    <div class="step"><h3>Interview Preparation</h3><p>Firm-specific question banks, narrative coaching, and up to three recorded video sessions with AI feedback.</p></div>
+    <div class="step"><h3>Placement</h3><p>A polished candidate brief goes to the client. We facilitate both sides through offer negotiation, reference checks, and onboarding follow-up.</p></div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ──────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="sec-tag">Testimonials</div>
+  <h2 class="sec-title">Voices from both sides<br>of the table.</h2>
+  <div class="divider"></div>
+  <div class="tgrid">
+    <div class="tcard">
+      <p>Leslie didn't just find me a role — she found me the right role. The résumé polish surfaced achievements I'd completely undersold, and her coaching before the final interview made me feel like the only candidate they were considering. I got the VP of Merchandising offer within three weeks.</p>
+      <div class="tauthor">K. Andrade</div>
+      <div class="trole">VP of Merchandising, National Specialty Retailer</div>
+    </div>
+    <div class="tcard">
+      <p>We've worked with four search firms over the years. Leslie Simon Recruiting is different — every candidate she presented understood our brand, our culture, and our growth stage before the first interview. The hire we made has been transformative.</p>
+      <div class="tauthor">Chief People Officer</div>
+      <div class="trole">Global Lifestyle Accessories Brand</div>
+    </div>
+    <div class="tcard">
+      <p>I was skeptical about AI polishing my LinkedIn — I've been in this industry for 20 years. But the rewrite was sharper, more specific, and truer to my real impact than anything I'd written myself. Two recruiter calls in the first week.</p>
+      <div class="tauthor">J. Whitfield</div>
+      <div class="trole">Creative Director, Premium Apparel — Los Angeles</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="sec-tag">Get Started</div>
+  <h2 class="sec-title">Every exceptional placement<br>begins with a conversation.</h2>
+  <div class="divider"></div>
+  <div class="contact-grid">
+    <form class="cform" onsubmit="return false">
+      <select>
+        <option>I am a candidate seeking placement</option>
+        <option>I am a corporate client seeking candidates</option>
+        <option>I need résumé / LinkedIn services only</option>
+        <option>I need background screening only</option>
+        <option>General inquiry</option>
+      </select>
+      <input type="text" placeholder="Full Name"/>
+      <input type="email" placeholder="Email Address"/>
+      <input type="text" placeholder="Company / Current Title"/>
+      <textarea placeholder="Tell us your situation — role, timeline, what matters most..."></textarea>
+      <button class="btn-go" style="width:100%;padding:14px;text-align:center">Send Inquiry →</button>
+      <p class="note">We respond to all inquiries within one business day.</p>
+    </form>
+    <div class="cinfo">
+      <div class="ci"><div class="ci-icon">✦</div><div><h3>Discovery Call</h3><p>45-minute consultation for candidates and clients alike. We determine fit and scope in the first conversation.</p></div></div>
+      <div class="ci"><div class="ci-icon">◈</div><div><h3>Turnaround</h3><p>AI-enhanced documents in 24 hours. Full candidate presentation packages within 5 business days.</p></div></div>
+      <div class="ci"><div class="ci-icon">◉</div><div><h3>Confidentiality</h3><p>All engagement details, candidate identities, and client mandates kept strictly confidential under NDA.</p></div></div>
+      <div class="ci"><div class="ci-icon">⬡</div><div><h3>Reach</h3><p>National across financial services, technology, healthcare, and professional services — with select international mandates.</p></div></div>
+      <div style="padding-top:22px;border-top:1px solid var(--s700);margin-top:4px">
+        <div class="sec-tag" style="margin-bottom:8px">Connect</div>
+        <p style="color:var(--s200);font-size:14px;line-height:2">lesliesimonrecruiting.com<br>linkedin.com/in/lesliesimonrecruiting<br>hello@lesliesimonrecruiting.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main><!-- /main -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     ACCOUNT MODAL
+════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="auth-modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-head">
+      <h2 id="modal-title">Create Your Account</h2>
+      <p id="modal-sub">Join the Leslie Simon Talent candidate network — access AI tools, community, and direct messaging with Leslie.</p>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-signup-btn" onclick="switchModalTab('signup')">New Account</button>
+      <button class="modal-tab" id="tab-login-btn" onclick="switchModalTab('login')">Sign In</button>
+    </div>
+    <div class="modal-body">
+      <!-- SIGNUP FORM -->
+      <div id="modal-signup" class="modal-form">
+        <input type="text" id="signup-name" placeholder="Full Name"/>
+        <input type="email" id="signup-email" placeholder="Email Address"/>
+        <input type="password" placeholder="Create Password"/>
+        <select id="signup-type">
+          <option value="candidate">I am a Candidate</option>
+          <option value="client">I am a Corporate Client</option>
+        </select>
+        <input type="text" id="signup-title" placeholder="Current Title / Company"/>
+        <button class="btn-go" style="width:100%;padding:13px;text-align:center" onclick="signUp()">Create Account →</button>
+      </div>
+      <!-- LOGIN FORM -->
+      <div id="modal-login" class="modal-form" style="display:none">
+        <input type="email" id="login-email" placeholder="Email Address"/>
+        <input type="password" placeholder="Password"/>
+        <button class="btn-go" style="width:100%;padding:13px;text-align:center" onclick="signIn()">Sign In →</button>
+        <button onclick="switchModalTab('signup')" style="background:none;border:none;color:var(--cu400);font-size:14px;cursor:pointer;text-align:center;width:100%">Don't have an account? Create one →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAT DRAWER
+════════════════════════════════════════════════════════════ -->
+<div id="chat-drawer">
+  <div class="cd-header" onclick="toggleChat()">
+    <div class="cd-title">
+      <div class="cd-dot"></div>
+      <span id="chat-drawer-title">Messages</span>
+    </div>
+    <div class="cd-controls">
+      <button class="cd-ctrl" id="chat-toggle-icon">▲</button>
+      <button class="cd-ctrl" onclick="event.stopPropagation();document.getElementById('chat-drawer').classList.remove('open')">×</button>
+    </div>
+  </div>
+  <div class="cd-tabs">
+    <button class="cd-tab active" id="ct-community" onclick="switchChat('community',this)">Forum</button>
+    <button class="cd-tab" id="ct-leslie" onclick="switchChat('leslie',this)">Leslie</button>
+    <button class="cd-tab" id="ct-claude" onclick="switchChat('claude',this)">Claude AI</button>
+  </div>
+  <div class="cd-messages" id="chat-messages"></div>
+  <div class="cd-input-area">
+    <input class="cd-input" type="text" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+    <button class="cd-send" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24"><path d="M2 21L23 12 2 3v7l15 2-15 2v7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- CHAT FAB -->
+<button class="chat-fab" onclick="toggleChat()" id="chat-fab" style="display:none">
+  💬
+  <span class="fab-badge" id="fab-badge">3</span>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════════ -->
+<script>
+/* ── STATE ───────────────────────────────────────────────── */
+let currentUser = null;
+let chatOpen = false;
+let currentChatTab = 'community';
+let currentTipsTab = 'candidates';
+
+/* ── TIPS DATA ───────────────────────────────────────────── */
+const tipsData = {
+  candidates: [
+    {source:'Business of Fashion',headline:'Fashion Recruiters Reveal the Résumé Mistakes That Eliminate Candidates Immediately',blurb:'The top red flags: no quantified achievements ("responsible for" vs. "grew by"), generic summaries, and missing sell-through or OTB metrics. Numbers are the language of fashion hiring.',date:'2 days ago',url:'https://www.businessoffashion.com/',thumb:'1454165804606-c3d57bc86b40'},
+    {source:'LinkedIn Talent Blog',headline:'LinkedIn Profiles With These 5 Elements Get 3× More Views',blurb:'Professional photo, custom headline, complete skills section, 500+ connections, and an active About section are the top differentiators for recruiter discovery in any industry.',date:'3 days ago',url:'https://www.linkedin.com/business/talent/blog',thumb:'1517245386807-bb43f82c33c4'},
+    {source:'WWD Careers',headline:'The Fashion Industry\'s Hottest Titles in 2025 — And What They Actually Pay',blurb:'Creative Director roles at DTC brands are commanding $180–260K. VP Merchandising in luxury now routinely clears $200K. Knowing the market before you negotiate is non-negotiable.',date:'5 days ago',url:'https://wwd.com/business-news/',thumb:'1490481651871-ab68de25d43d'},
+    {source:'Retail Dive',headline:'How to Interview at a Brand That\'s Scaling vs. One That\'s Optimizing',blurb:'These are two completely different conversations. Scaling brands want builders and risk-takers. Optimization mandates want operators and analysts. Your answers must match the moment.',date:'1 week ago',url:'https://www.retaildive.com/',thumb:'1573164713714-d95e436ab8d6'},
+    {source:'Forbes Careers',headline:'Salary Negotiation in 2025: The Leverage Has Shifted Back to Candidates in Specialized Roles',blurb:'Candidates in merchandising, product development, and talent with demonstrated sell-through metrics are seeing 15–22% above initial offers when they negotiate with data.',date:'2 weeks ago',url:'https://www.forbes.com/careers/',thumb:'1554224155-6726b3ff858f'},
+    {source:'The Muse',headline:'These 3 LinkedIn Headline Formulas Outperform All Others',blurb:'"Role | Specialty | Outcome" beats generic titles by 47% in recruiter click-through. Example: "VP Merchandising | Accessories & Footwear | $50M+ Category Growth" outperforms "Senior Executive."',date:'2 weeks ago',url:'https://www.themuse.com/advice',thumb:'1486312338219-ce68d2c6f44d'},
+    {source:'Korn Ferry Research',headline:'Fashion Executive Search Is Moving Faster Than Ever',blurb:'Average time-to-placement for VP-and-above roles in fashion dropped from 4.2 months to 3.1 months in 2024. Candidates who delay submitting polished materials are consistently losing to faster movers.',date:'3 weeks ago',url:'https://www.kornferry.com/insights',thumb:'1497215728101-856f4ea42174'},
+  ],
+  corporate: [
+    {source:'Business of Fashion',headline:'The Skills Gap in Fashion Leadership Is Getting Worse, Not Better',blurb:'Brands consistently report difficulty finding leaders who combine creative vision with commercial discipline — especially in merchandising, product, and omnichannel operations. The shortage is driving up comp.',date:'1 day ago',url:'https://www.businessoffashion.com/',thumb:'1558655146-9f40138edfeb'},
+    {source:'SHRM Research',headline:'Résumé Inconsistencies Are More Common Than Fashion Brands Expect',blurb:'27% of fashion/retail candidates overstate titles or responsibilities. AI-assisted screening flags these gaps in minutes — before they become costly mis-hires at the VP level and above.',date:'3 days ago',url:'https://www.shrm.org/',thumb:'1521737711867-e3b97375f902'},
+    {source:'LinkedIn Talent Insights',headline:'70% of the Best Fashion Candidates Are Passive — Here\'s How to Reach Them',blurb:'Top merchants, creative directors, and product leaders are rarely job-hunting. The brands winning talent wars have relationships with them before the role opens.',date:'5 days ago',url:'https://www.linkedin.com/business/talent',thumb:'1556761175-5973dc0f32e7'},
+    {source:'WWD',headline:'Culture Fit vs. Culture Add: The Framework That\'s Transforming Fashion Retention',blurb:'Brands that hire for what the candidate brings that the team lacks see 40% better retention. In fashion, where cultural authenticity is product, this distinction matters even more.',date:'1 week ago',url:'https://wwd.com/',thumb:'1556742049-0cfed4f6a45d'},
+    {source:'Deloitte Human Capital',headline:'Slow Hiring Is Killing Fashion Brands\' Access to Top Talent',blurb:'Firms that compress time-to-offer below 30 days are landing significantly stronger candidates. The best fashion executives have multiple conversations at once — the slow process loses them.',date:'1 week ago',url:'https://www2.deloitte.com/us/en/insights/topics/talent.html',thumb:'1551836022-d5d88e9218df'},
+    {source:'Harvard Law Review',headline:'FCRA Compliance in 2025: New FTC Guidance on AI Screening',blurb:'The FTC issued new guidance on AI in background screening. Fashion and retail employers who use AI-assisted vetting must now disclose that involvement in any adverse action decision.',date:'2 weeks ago',url:'https://corpgov.law.harvard.edu/',thumb:'1589829545856-d10d557cf95f'},
+    {source:'Bloomberg Law',headline:'Pay Transparency Laws Now Cover 40% of US Workers',blurb:'NY, CA, CO, WA, and IL now require salary ranges in job postings. Most fashion brands with multistate operations are non-compliant. The fines are mounting.',date:'3 weeks ago',url:'https://news.bloomberglaw.com/',thumb:'1505664194779-8beaceb93744'},
+  ]
+};
+
+let tipsIndex = { candidates: 0, corporate: 0 };
+
+/* Build one feed card. If the item has a url, render a real <a> link
+   that opens in a new tab; otherwise a plain non-interactive card. */
+// Cache grabbed thumbnails by URL so tab-switching / refresh don't re-fetch.
+const thumbCache = {};
+function setThumb(box, src) {
+  const img = box.querySelector('img');
+  if (!img || !src) return;
+  img.onload = () => box.classList.add('has-img');
+  img.src = src;
+}
+/* Try to grab a thumbnail for the article: a hand-set t.thumb wins; otherwise
+   ask the Microlink link-preview API for the page's og:image. On failure the
+   card keeps its on-brand gradient placeholder — it never looks broken. */
+function hydrateThumb(t, box) {
+  if (t.thumb) { setThumb(box, t.thumb); return; }
+  if (!t.url) return;
+  if (t.url in thumbCache) { setThumb(box, thumbCache[t.url]); return; }
+  fetch('https://api.microlink.io/?url=' + encodeURIComponent(t.url))
+    .then(r => r.json())
+    .then(j => {
+      const src = j && j.data && j.data.image && j.data.image.url;
+      thumbCache[t.url] = src || '';
+      setThumb(box, src);
+    })
+    .catch(() => { thumbCache[t.url] = ''; });
+}
+
+function makeTipCard(t) {
+  const card = document.createElement(t.url ? 'a' : 'div');
+  card.className = 'tip-card';
+  if (t.url) {
+    card.href = t.url;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    card.setAttribute('aria-label', `${t.headline} — opens ${t.source} in a new tab`);
+  }
+  const ext = t.url ? ' <span class="tip-ext" aria-hidden="true">↗</span>' : '';
+  const thumb = (t.url || t.thumb) ? `<div class="tip-thumb"><img alt="" loading="lazy"></div>` : '';
+  card.innerHTML = `${thumb}<div class="tip-source">${t.source}${ext}</div>
+    <div class="tip-headline">${t.headline}</div>
+    <div class="tip-blurb">${t.blurb}</div>
+    <div class="tip-date">${t.date}</div>`;
+  if (t.url || t.thumb) hydrateThumb(t, card.querySelector('.tip-thumb'));
+  return card;
+}
+
+function renderTips() {
+  const scroll = document.getElementById('tips-scroll');
+  scroll.innerHTML = '';
+  tipsData[currentTipsTab].forEach(t => scroll.appendChild(makeTipCard(t)));
+}
+
+function switchTips(tab, btn) {
+  currentTipsTab = tab;
+  document.querySelectorAll('.tips-tab').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  renderTips();
+}
+
+/* ── PANEL COLLAPSE: left nav (X / ☰) + right feed (chevron) ── */
+function syncPanelAria() {
+  const navOpen  = !document.body.classList.contains('nav-collapsed');
+  const feedOpen = !document.body.classList.contains('tips-collapsed');
+  const x  = document.getElementById('sb-collapse');
+  const mt = document.getElementById('menu-toggle');
+  const tt = document.getElementById('tips-toggle');
+  if (x)  x.setAttribute('aria-expanded',  String(navOpen));
+  if (mt) mt.setAttribute('aria-expanded', String(navOpen));
+  if (tt) tt.setAttribute('aria-expanded', String(feedOpen));
+}
+function toggleNav(forceCollapse) {
+  const collapse = (typeof forceCollapse === 'boolean')
+    ? forceCollapse
+    : !document.body.classList.contains('nav-collapsed');
+  document.body.classList.toggle('nav-collapsed', collapse);
+  syncPanelAria();
+}
+function toggleTips() {
+  document.body.classList.toggle('tips-collapsed');
+  syncPanelAria();
+}
+
+function rotateTips() {
+  const icon = document.getElementById('refresh-icon');
+  icon.classList.add('spin');
+  setTimeout(() => { icon.classList.remove('spin'); renderTips(); }, 800);
+}
+
+function fetchTips() {
+  const q = document.getElementById('tips-query').value.toLowerCase();
+  const icon = document.getElementById('refresh-icon');
+  icon.classList.add('spin');
+  setTimeout(() => {
+    icon.classList.remove('spin');
+    const all = [...tipsData.candidates, ...tipsData.corporate];
+    const filtered = q ? all.filter(t => t.headline.toLowerCase().includes(q) || t.blurb.toLowerCase().includes(q)) : tipsData[currentTipsTab];
+    const scroll = document.getElementById('tips-scroll');
+    scroll.innerHTML = '';
+    (filtered.length ? filtered : [{source:'No results',headline:'No matching tips found',blurb:'Try a different search term.',date:''}]).forEach(t => scroll.appendChild(makeTipCard(t)));
+  }, 600);
+}
+
+/* ── TAB SWITCHING ───────────────────────────────────────── */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ttab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ── AI SIMULATION ───────────────────────────────────────── */
+const aiSamples = {
+  resume:`MORGAN A. REYES — VP of Merchandising | Creative & Product Leader
+Los Angeles, CA  |  (310) 555-0174  |  m.reyes@email.com  |  linkedin.com/in/morganreyes
+
+══════════════════════════════════════════
+EXECUTIVE PROFILE
+══════════════════════════════════════════
+Merchant and product leader with 14 years building and scaling fashion, accessories, and lifestyle categories for specialty, department store, and DTC channels. Known for identifying white space, building brand-right product stories, and developing cross-functional teams that consistently beat plan.
+
+KEY ACHIEVEMENTS
+▸  Grew women's accessories category 38% YOY ($28M → $39M) by repositioning assortment mix and adding 4 key door placements at Nordstrom
+▸  Led full product overhaul for 3 house brands — reduced inventory liability 22% while improving sell-through from 67% to 84%
+▸  Built and mentored a team of 9 across buying, planning, and product development; 3 direct reports promoted within 18 months
+▸  Partnered with marketing to launch seasonal campaigns that drove 44% growth in email-attributed revenue
+
+[ Full résumé continues... ]
+
+✦ AI Coaching Notes:
+→ Lead bullet rewritten from "Responsible for accessories buying" → quantified outcome with door-count specificity
+→ "Sell-through" metric added — fashion hiring managers prioritize this over revenue alone
+→ ATS keywords added: "OTB management", "private label", "assortment planning", "vendor negotiation"`,
+  linkedin:`✦ OPTIMIZED HEADLINE:
+"VP Merchandising | Accessories & Lifestyle | Specialty + Dept Store + DTC | Team Builder | 14 Years"
+
+══════════════════════════════════════════
+✦ REWRITTEN ABOUT SECTION:
+══════════════════════════════════════════
+I build product businesses that sell — and teams that know why they work.
+
+Fourteen years in fashion and accessories merchandising have taught me that the difference between a category that performs and one that doesn't is rarely the product. It's the edit, the timing, the story, and the people carrying it into the market.
+
+I've led assortments from concept to floor at specialty, department store, and DTC channels — growing categories, improving sell-through, and developing buying and planning talent that sticks around and moves up.
+
+Currently open to VP-level opportunities at brands where product conviction and merchant instincts actually move the needle.
+
+[ 2,391 chars — within LinkedIn's 2,600 char limit ]
+
+✦ AI Notes:
+→ Opening hook replaced "experienced merchant" with specific differentiator
+→ CTA added — targeted to the right type of role and organization
+→ Keyword density improved for "assortment", "sell-through", "OTB", "DTC"`,
+  summary:`EXECUTIVE SUMMARY — MORGAN A. REYES
+
+Morgan A. Reyes is a fashion merchandise and product executive with fourteen years of progressive leadership across specialty retail, department stores, and direct-to-consumer channels. She has a demonstrated record of growing underdeveloped categories — most recently scaling a women's accessories business from $28M to $39M in a single fiscal year — while simultaneously reducing inventory liability and improving sell-through performance.
+
+Known equally for her merchant instincts and her ability to build high-performing buying and planning teams, Ms. Reyes combines creative vision with a rigorous commercial discipline that brand leadership teams rely on in periods of growth and transformation.
+
+— 108 words | Executive-ready | Third-person format ✓`,
+  cover:`[Date]
+
+Dear [Hiring Manager],
+
+I'm writing about the Creative Director, Accessories role at [Brand] — a position I've been watching since you announced the category expansion in [month].
+
+Over twelve years, I've had the unusual combination of working both sides of the product equation: as a merchant who built the assortment, and as a creative director who told the story. That dual fluency — knowing what sells and knowing how to make it worth wanting — is what I'd bring to your team.
+
+Three specific things I'd focus on in the first 90 days:
+
+1. A full competitive and whitespace audit of the accessories assortment by channel and customer segment
+2. A creative brief that reconnects the product line to the brand's core point of view
+3. Intro meetings with your top three retail partners to hear directly what they need
+
+I'd love to talk. I know this category, this customer, and what's possible here.
+
+Warmly,
+[Your Name]`
+};
+
+function runAI(type) {
+  const spinner = document.getElementById('spinner-' + type);
+  const output = document.getElementById('output-' + type);
+  spinner.style.display = 'block';
+  output.innerHTML = '<span class="out-ph">Analyzing and rewriting...</span>';
+  setTimeout(() => {
+    spinner.style.display = 'none';
+    output.innerHTML = '';
+    const span = document.createElement('span');
+    span.textContent = aiSamples[type] || 'Output will appear here.';
+    output.appendChild(span);
+  }, 2400);
+}
+
+/* ── HERO CONTACT FORM ──────────────────────────────────── */
+function heroFormSubmit(e) {
+  e.preventDefault();
+  var btn = document.getElementById('hf-submit');
+  var msg = document.getElementById('hf-success');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  setTimeout(function() {
+    btn.style.display = 'none';
+    msg.style.display = 'block';
+  }, 1200);
+}
+
+/* ── ACCOUNTS ────────────────────────────────────────────── */
+function openModal(tab) {
+  document.getElementById('auth-modal').classList.add('open');
+  switchModalTab(tab);
+}
+function closeModal() {
+  document.getElementById('auth-modal').classList.remove('open');
+}
+function switchModalTab(tab) {
+  document.getElementById('modal-signup').style.display = tab === 'signup' ? 'flex' : 'none';
+  document.getElementById('modal-login').style.display = tab === 'login' ? 'flex' : 'none';
+  document.getElementById('tab-signup-btn').classList.toggle('active', tab === 'signup');
+  document.getElementById('tab-login-btn').classList.toggle('active', tab === 'login');
+  document.getElementById('modal-title').textContent = tab === 'signup' ? 'Create Your Account' : 'Welcome Back';
+  document.getElementById('modal-sub').textContent = tab === 'signup'
+    ? 'Join the Leslie Simon Talent candidate network.'
+    : 'Sign in to access your tools and messages.';
+}
+
+function signUp() {
+  const name = document.getElementById('signup-name').value || 'New Member';
+  const email = document.getElementById('signup-email').value || 'member@email.com';
+  currentUser = { name, email, initials: name.split(' ').map(n=>n[0]).join('').toUpperCase().slice(0,2) };
+  activateUser();
+  closeModal();
+  openChat('claude');
+  addMessage('claude', 'Claude AI', `Welcome to Leslie Simon Talent, ${name.split(' ')[0]}! I'm Claude, your always-on career advisor. Ask me anything — résumé strategy, interview prep, salary negotiation, or how to think about your next move.`);
+}
+
+function signIn() {
+  const email = document.getElementById('login-email').value || 'member@email.com';
+  const name = email.split('@')[0].replace('.',' ').replace(/\b\w/g, c => c.toUpperCase());
+  currentUser = { name, email, initials: name.slice(0,2).toUpperCase() };
+  activateUser();
+  closeModal();
+}
+
+function activateUser() {
+  document.getElementById('guest-bar').style.display = 'none';
+  document.getElementById('user-bar').style.display = 'flex';
+  document.getElementById('user-initials').textContent = currentUser.initials;
+  document.getElementById('user-display-name').textContent = currentUser.name.split(' ')[0] + '.';
+  document.getElementById('chat-fab').style.display = 'flex';
+}
+
+function signOut() {
+  currentUser = null;
+  document.getElementById('guest-bar').style.display = 'flex';
+  document.getElementById('user-bar').style.display = 'none';
+  document.getElementById('chat-fab').style.display = 'none';
+  document.getElementById('chat-drawer').classList.remove('open');
+  chatOpen = false;
+}
+
+/* ── CHAT ────────────────────────────────────────────────── */
+const chatHistory = { community: [], leslie: [], claude: [] };
+
+const seedMessages = {
+  community: [
+    { from: 'other', who: 'Marcus K.', text: 'Anyone here gone through the KKR final round recently? Curious what the operating case looked like.' },
+    { from: 'other', who: 'Priya S.', text: 'I did in March — they had a 3-hour LBO model + a 30-min debrief with two MDs. Happy to share notes.' },
+    { from: 'other', who: 'James W.', text: 'Leslie\'s team prepped me for mine last fall. The firm-specific Q bank they have is really accurate.' },
+  ],
+  leslie: [
+    { from: 'other', who: 'Leslie Simon', text: 'Hello — I\'m here. If you\'re a placed candidate checking in, or exploring what\'s in the market right now, feel free to message me directly.' },
+  ],
+  claude: []
+};
+
+function seedChat(tab) {
+  if (chatHistory[tab].length === 0 && seedMessages[tab]) {
+    chatHistory[tab] = [...seedMessages[tab]];
+  }
+}
+
+function openChat(tab) {
+  if (!currentUser) { openModal('signup'); return; }
+  switchChat(tab, document.getElementById('ct-' + tab));
+  document.getElementById('chat-drawer').classList.add('open');
+  chatOpen = true;
+  document.getElementById('chat-toggle-icon').textContent = '▼';
+  document.getElementById('fab-badge').style.display = 'none';
+}
+
+function toggleChat() {
+  if (!currentUser) { openModal('signup'); return; }
+  chatOpen = !chatOpen;
+  document.getElementById('chat-drawer').classList.toggle('open', chatOpen);
+  document.getElementById('chat-toggle-icon').textContent = chatOpen ? '▼' : '▲';
+  if (chatOpen) document.getElementById('fab-badge').style.display = 'none';
+}
+
+function switchChat(tab, btn) {
+  currentChatTab = tab;
+  document.querySelectorAll('.cd-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const titles = { community: 'Candidate Forum', leslie: 'Leslie Simon', claude: 'Claude AI' };
+  document.getElementById('chat-drawer-title').textContent = titles[tab];
+  seedChat(tab);
+  renderMessages();
+}
+
+function renderMessages() {
+  const container = document.getElementById('chat-messages');
+  container.innerHTML = '';
+  const msgs = chatHistory[currentChatTab];
+  msgs.forEach(m => {
+    const div = document.createElement('div');
+    div.className = 'msg msg-' + m.from;
+    div.innerHTML = `<div class="msg-who">${m.from === 'you' ? 'You' : m.who}</div>
+      <div class="msg-bubble">${m.text}</div>`;
+    container.appendChild(div);
+  });
+  container.scrollTop = container.scrollHeight;
+}
+
+function sendMessage() {
+  if (!currentUser) { openModal('signup'); return; }
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  chatHistory[currentChatTab].push({ from: 'you', who: 'You', text });
+  renderMessages();
+
+  if (currentChatTab === 'claude') {
+    setTimeout(() => {
+      const responses = [
+        `Great question. Based on what you've shared, here's how I'd approach it: start by framing your narrative around measurable outcomes — not responsibilities. Hiring managers at top firms are looking for evidence of impact, not a list of duties.`,
+        `The short answer is yes, and here's why: your tenure at that firm is actually an asset in this context, not a liability. The key is how you frame the transition story.`,
+        `For that specific firm, I'd recommend leading with your quantified achievements in the first 30 seconds — before they ask. It signals self-awareness and confidence. Want me to help you draft that opening?`,
+        `That's a really common concern, but it's more manageable than it feels. The compensation gap can often be bridged with a signing bonus or accelerated review cycle — both of which are standard at that level.`,
+      ];
+      const r = responses[Math.floor(Math.random() * responses.length)];
+      chatHistory['claude'].push({ from: 'other', who: 'Claude AI', text: r });
+      if (currentChatTab === 'claude') renderMessages();
+    }, 1200);
+  } else if (currentChatTab === 'leslie') {
+    setTimeout(() => {
+      chatHistory['leslie'].push({ from: 'other', who: 'Leslie Simon', text: `Thanks for reaching out. I'll get back to you within one business day. If it's time-sensitive, mention that and I'll prioritize it. — LS` });
+      if (currentChatTab === 'leslie') renderMessages();
+    }, 1500);
+  } else {
+    setTimeout(() => {
+      const members = ['Marcus K.', 'Priya S.', 'James W.', 'Anna T.', 'Robert L.'];
+      const m = members[Math.floor(Math.random() * members.length)];
+      const replies = [
+        'That\'s been on my mind too — curious to hear others\' take.',
+        'Seconded. Leslie\'s team was really helpful on this exact question.',
+        'Happy to share what I know from my own process. DM me.',
+        'Good point. The market has shifted a lot on this in the last 6 months.'
+      ];
+      chatHistory['community'].push({ from: 'other', who: m, text: replies[Math.floor(Math.random() * replies.length)] });
+      if (currentChatTab === 'community') renderMessages();
+    }, 1800);
+  }
+}
+
+/* ── ACTIVE NAV ON SCROLL ────────────────────────────────── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+}, { passive: true });
+
+/* ── INIT ────────────────────────────────────────────────── */
+renderTips();
+seedChat('community');
+// Desktop: both panels open by default (collapse only via × / chevron). On small
+// screens (≤768px) the nav is an overlay, so start it collapsed — reopen via ☰.
+if (window.innerWidth <= 768) document.body.classList.add('nav-collapsed');
+syncPanelAria();
+</script>
+</body>
+</html>
