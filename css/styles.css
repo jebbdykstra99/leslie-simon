@@ -71,21 +71,33 @@ a {
   top: 12px;
 }
 
+/* Logo bar: anchored at the top of the page but NOT sticky — it scrolls
+   away with the hero so it never overlaps content further down. */
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 50;
+  z-index: 40;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: clamp(22px, 2.6vw, 40px);
   min-height: 0;
   padding: 22px clamp(24px, 3.4vw, 56px);
   border: 0;
   background: transparent;
   backdrop-filter: none;
+}
+
+/* Nav bar: stays fixed (sticky) so visitors can jump between sections from
+   anywhere on the one-page site. Right-aligned so it never covers the logo. */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 2.6vw, 40px);
+  padding: 22px clamp(24px, 3.4vw, 56px);
 }
 
 .brand {
@@ -443,7 +455,9 @@ p {
   left: auto;
   right: clamp(-30px, -1vw, 0px);
   top: 50%;
-  transform: translateY(-50%);
+  /* Nudge down ~8px so the sphere's pole lines up with the cap-top of the
+     "Connecting" headline on the left. */
+  transform: translateY(calc(-50% + 8px));
   width: min(51vw, 700px);
   aspect-ratio: 1086 / 1448;
   background: url("../images/leslie-simon-globe-rich.png") center / contain no-repeat;
