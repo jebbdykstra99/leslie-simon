@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Leslie Simon LS monogram">
+  <defs>
+    <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e7c373"/><stop offset="50%" stop-color="#c79633"/><stop offset="100%" stop-color="#9a6c1f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- LS monogram only — no ring, no background -->
+  <text x="78" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="104" fill="url(#mg)" text-anchor="middle">L</text>
+  <text x="120" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="116" fill="url(#mg)" text-anchor="middle">S</text>
+</svg>
