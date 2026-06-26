@@ -356,7 +356,7 @@ p {
   width: 100%;
   max-width: 1320px;
   margin: 0;
-  padding-top: clamp(70px, 7vw, 104px);
+  padding-top: clamp(48px, 4.6vw, 70px);
   padding-bottom: clamp(18px, 2.4vw, 36px);
 }
 
