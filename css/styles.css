@@ -133,7 +133,8 @@ a {
 .site-nav {
   position: static;
   order: 1;
-  display: flex;
+  /* Hidden until opened; the toggle controls visibility on every viewport. */
+  display: none;
   flex-direction: row;
   align-items: center;
   gap: clamp(20px, 2.4vw, 42px);
@@ -142,6 +143,15 @@ a {
   border: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.site-nav.is-open {
+  display: flex;
+}
+
+/* Avoid a flash of the open dropdown before JS sets the correct state. */
+body:not(.nav-ready) .site-nav {
+  display: none;
 }
 
 .site-nav a {

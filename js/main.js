@@ -2,29 +2,44 @@ const navToggle = document.querySelector('[data-nav-toggle]');
 const nav = document.querySelector('[data-nav]');
 
 if (navToggle && nav) {
+  // The inline bar is shown by default on desktop; the dropdown is closed by
+  // default on smaller screens. The toggle shows an X when open, a hamburger
+  // when closed, on every viewport.
+  const desktop = window.matchMedia('(min-width: 901px)');
+
   const setOpen = (open) => {
     nav.classList.toggle('is-open', open);
     navToggle.classList.toggle('is-active', open);
     navToggle.setAttribute('aria-expanded', String(open));
   };
 
+  // Apply the correct default for the current viewport, then reveal the nav.
+  setOpen(desktop.matches);
+  document.body.classList.add('nav-ready');
+
+  // Re-apply the sensible default when crossing the breakpoint.
+  desktop.addEventListener('change', (event) => setOpen(event.matches));
+
   navToggle.addEventListener('click', (event) => {
     event.stopPropagation();
     setOpen(!nav.classList.contains('is-open'));
   });
 
-  // Collapse after choosing a destination.
+  // On mobile the menu is a dropdown, so collapse it after choosing a
+  // destination or tapping outside. On desktop the bar stays put.
   nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setOpen(false));
+    link.addEventListener('click', () => {
+      if (!desktop.matches) setOpen(false);
+    });
   });
 
-  // Collapse on Escape or when clicking anywhere outside the menu.
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setOpen(false);
+    if (event.key === 'Escape' && !desktop.matches) setOpen(false);
   });
 
   document.addEventListener('click', (event) => {
-    if (nav.classList.contains('is-open') &&
+    if (!desktop.matches &&
+        nav.classList.contains('is-open') &&
         !nav.contains(event.target) &&
         !navToggle.contains(event.target)) {
       setOpen(false);
