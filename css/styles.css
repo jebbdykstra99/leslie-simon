@@ -123,6 +123,7 @@ a {
 .brand-text {
   display: grid;
   gap: 5px;
+  justify-items: center;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -139,7 +140,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  padding-left: .3em;
+  text-indent: .3em;
   color: var(--gold-dark);
   font-style: normal;
   font-size: clamp(10px, .85vw, 12px);
@@ -151,10 +152,11 @@ a {
 .brand-text em::after {
   content: "";
   flex: 0 0 auto;
+  width: clamp(16px, 1.6vw, 26px);
   height: 1px;
-  width: clamp(12px, 1.1vw, 20px);
   background: currentColor;
   opacity: .85;
+  text-indent: 0;
 }
 
 .site-nav {
