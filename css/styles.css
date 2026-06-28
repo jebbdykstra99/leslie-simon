@@ -368,13 +368,13 @@ p {
   z-index: 1;
   align-self: start;
   display: grid;
-  grid-template-columns: minmax(340px, 1fr) minmax(400px, 1.1fr);
-  align-items: center;
+  grid-template-columns: minmax(340px, 1fr) minmax(400px, 1.15fr);
+  align-items: start;
   gap: clamp(16px, 1.6vw, 30px);
   width: 100%;
-  max-width: 1320px;
+  max-width: 1780px;
   margin: 0;
-  padding-top: clamp(58px, 5vw, 78px);
+  padding-top: clamp(60px, 4.6vw, 86px);
   padding-bottom: clamp(18px, 2.4vw, 36px);
 }
 
@@ -480,11 +480,11 @@ p {
   content: "";
   position: absolute;
   left: auto;
-  right: auto;
-  left: clamp(-70px, -3.4vw, -10px);
+  right: clamp(-90px, -4vw, -20px);
+  left: auto;
   top: 50%;
-  transform: translateY(-50%);
-  width: min(35vw, 460px);
+  transform: translateY(-53%);
+  width: min(46vw, 720px);
   aspect-ratio: 1086 / 1448;
   background: url("../images/leslie-simon-globe-rich.png") center / contain no-repeat;
   opacity: 1;
