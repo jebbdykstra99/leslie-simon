@@ -473,10 +473,10 @@ p {
   position: absolute;
   left: auto;
   right: auto;
-  left: clamp(-110px, -5vw, -30px);
+  left: clamp(-70px, -3.4vw, -10px);
   top: 50%;
   transform: translateY(-50%);
-  width: min(43vw, 560px);
+  width: min(35vw, 460px);
   aspect-ratio: 1086 / 1448;
   background: url("../images/leslie-simon-globe-rich.png") center / contain no-repeat;
   opacity: 1;
