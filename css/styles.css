@@ -384,6 +384,14 @@ p {
   max-width: 520px;
 }
 
+.hero-copy .script-line {
+  margin-top: clamp(16px, 1.8vw, 26px);
+}
+
+.hero-copy .button {
+  margin-top: clamp(34px, 4.5vw, 60px);
+}
+
 .hero-logo-row {
   display: flex;
   align-items: center;
