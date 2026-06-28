@@ -1079,16 +1079,44 @@ p {
   }
 
   .service-grid,
-  .model-grid,
+  .model-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .contact-form,
   .contact-intro {
     grid-template-columns: 1fr;
   }
 
-  .service-card,
-  .model-item {
+  .service-card {
+    min-height: 0;
+    padding: 20px 14px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .service-card-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+
+  .model-item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+    text-align: center;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .model-item h3 {
+    text-align: center;
   }
 
   .portrait-hero,
