@@ -130,29 +130,29 @@ a {
 
 .brand-text strong {
   font-family: var(--serif);
-  font-size: clamp(16px, 1.4vw, 21px);
+  font-size: clamp(20px, 1.8vw, 27px);
   font-weight: 600;
-  letter-spacing: .2em;
+  letter-spacing: .18em;
 }
 
 .brand-text em {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  text-indent: .3em;
+  gap: 8px;
+  text-indent: .24em;
   color: var(--gold-dark);
   font-style: normal;
-  font-size: clamp(10px, .85vw, 12px);
+  font-size: clamp(8px, .68vw, 10px);
   font-weight: 500;
-  letter-spacing: .3em;
+  letter-spacing: .24em;
 }
 
 .brand-text em::before,
 .brand-text em::after {
   content: "";
   flex: 0 0 auto;
-  width: clamp(16px, 1.6vw, 26px);
+  width: clamp(10px, 1vw, 16px);
   height: 1px;
   background: currentColor;
   opacity: .85;
