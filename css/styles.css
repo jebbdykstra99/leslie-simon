@@ -1053,9 +1053,26 @@ p {
     align-items: flex-start;
   }
 
+  /* Compact the icon/stat strips into 2 columns so these sections are far
+     shorter on phones instead of one tall single-file list. */
   .proof-strip,
   .icon-strip,
-  .brands-industries .icon-strip,
+  .brands-industries .icon-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proof-item,
+  .icon-item {
+    min-height: 0;
+    padding: 16px 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .icon-item span {
+    max-width: none;
+  }
+
   .brand-grid,
   .service-grid,
   .model-grid,
@@ -1064,8 +1081,6 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .proof-item,
-  .icon-item,
   .service-card,
   .model-item {
     border-right: 0;
