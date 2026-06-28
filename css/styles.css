@@ -471,12 +471,10 @@ p {
   content: "";
   position: absolute;
   left: auto;
-  right: clamp(-30px, -1vw, 0px);
+  right: clamp(-10px, 1vw, 30px);
   top: 50%;
-  /* Nudge down ~8px so the sphere's pole lines up with the cap-top of the
-     "Connecting" headline on the left. */
-  transform: translateY(calc(-50% + 8px));
-  width: min(51vw, 700px);
+  transform: translateY(-50%);
+  width: min(40vw, 520px);
   aspect-ratio: 1086 / 1448;
   background: url("../images/leslie-simon-globe-rich.png") center / contain no-repeat;
   opacity: 1;
