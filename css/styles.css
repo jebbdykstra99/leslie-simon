@@ -645,8 +645,12 @@ p {
 
 .icon-item {
   display: grid;
-  gap: 9px;
+  gap: 8px;
   place-items: center;
+  /* Pack icon+label at the top of the cell so any extra height from taller
+     (2-line) neighbors in the same row falls below the label, not as a gap
+     between the icon and its text. */
+  align-content: start;
   min-height: 112px;
   padding: 18px 14px;
   border-right: 1px solid var(--line);
