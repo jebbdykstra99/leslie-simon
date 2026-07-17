@@ -525,11 +525,19 @@ p {
 }
 
 /* Center the icon on the gold heading's 34px line (and out-rank the generic
-   .proof-item span rule that would otherwise shrink/offset it). */
+   .proof-item span rule that would otherwise shrink/offset it). Lowered 10px
+   from the heading's optical center per feedback that icons sat too high. */
 .proof-item .proof-icon {
-  margin-top: -5px;
+  margin-top: 5px;
   font-size: 17px;
   line-height: 34px;
+}
+
+/* Icons 2-4 sized 20% smaller than the first (Legacy stays at 17px). */
+.proof-item:nth-child(2) .proof-icon,
+.proof-item:nth-child(3) .proof-icon,
+.proof-item:nth-child(4) .proof-icon {
+  font-size: 13.6px;
 }
 
 .proof-item:last-child {
