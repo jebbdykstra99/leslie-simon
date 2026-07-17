@@ -548,6 +548,16 @@ p {
   display: block;
   margin-top: 14px;
   font-size: 11px;
+}
+
+/* Slightly smaller copy in the Future-Ready and Early Talent boxes so the
+   longer labels wrap naturally and the four quadrants feel balanced. */
+.proof-item:nth-child(2) div span,
+.proof-item:nth-child(3) div span {
+  font-size: 10px;
+}
+
+.proof-item span {
   font-weight: 500;
   letter-spacing: .12em;
   line-height: 1.35;
