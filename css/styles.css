@@ -521,8 +521,12 @@ p {
   border-right: 1px solid var(--line);
 }
 
-.proof-icon {
-  margin-top: 6px;
+/* Center the icon on the gold heading's 34px line (and out-rank the generic
+   .proof-item span rule that would otherwise shrink/offset it). */
+.proof-item .proof-icon {
+  margin-top: -5px;
+  font-size: 20px;
+  line-height: 34px;
 }
 
 .proof-item:last-child {
