@@ -841,11 +841,7 @@ p {
 }
 
 .model-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 14px;
-  align-items: center;
-  padding: 22px clamp(14px, 2vw, 26px);
+  padding: 12px clamp(18px, 2.4vw, 36px);
   border-right: 1px solid var(--line);
 }
 
@@ -853,14 +849,9 @@ p {
   border-right: 0;
 }
 
-.model-item span {
-  color: var(--gold-dark);
-  font-size: 30px;
-}
-
-.model-item h3 {
-  margin: 0;
-  text-align: left;
+.model-item p {
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .contact-page {
