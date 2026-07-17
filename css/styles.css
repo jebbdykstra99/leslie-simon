@@ -528,7 +528,7 @@ p {
    .proof-item span rule that would otherwise shrink/offset it). Lowered 10px
    from the heading's optical center per feedback that icons sat too high. */
 .proof-item .proof-icon {
-  margin-top: 5px;
+  margin-top: 0px;
   font-size: 17px;
   line-height: 34px;
 }
