@@ -372,7 +372,7 @@ p {
   align-items: start;
   gap: clamp(16px, 1.6vw, 30px);
   width: 100%;
-  max-width: 1780px;
+  max-width: none;
   margin: 0;
   padding-top: clamp(60px, 4.6vw, 86px);
   padding-bottom: clamp(18px, 2.4vw, 36px);
@@ -491,7 +491,7 @@ p {
   content: "";
   position: absolute;
   left: auto;
-  right: clamp(-90px, -4vw, -20px);
+  right: 0;
   left: auto;
   top: 50%;
   transform: translateY(-53%);
