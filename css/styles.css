@@ -525,7 +525,7 @@ p {
    .proof-item span rule that would otherwise shrink/offset it). */
 .proof-item .proof-icon {
   margin-top: -5px;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 34px;
 }
 
