@@ -628,6 +628,11 @@ p {
   background: rgba(255, 255, 255, .7);
 }
 
+/* Areas of Expertise (10 items): two even rows of 5 instead of 8-wide. */
+.icon-strip.icon-strip--expertise {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .icon-strip-title {
   grid-column: 1 / -1;
   padding: 18px clamp(26px, 5vw, 64px) 0;
