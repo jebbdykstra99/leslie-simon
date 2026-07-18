@@ -996,6 +996,29 @@ p {
   pointer-events: none;
 }
 
+.brand-tagline {
+  padding: 22px clamp(24px, 5vw, 74px) 26px;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: .03em;
+  color: var(--ink-soft);
+  background: rgba(244, 251, 252, .74);
+}
+
+.brand-tagline span {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
 .site-footer {
   display: none;
   justify-content: space-between;
