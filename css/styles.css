@@ -20,10 +20,15 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent trackpad/touch momentum from triggering a browser back/forward
+     swipe or bounce-lock once a visitor reaches the top or bottom of the
+     one-page site. */
+  overscroll-behavior-y: none;
 }
 
 body {
   min-height: 100vh;
+  overscroll-behavior-y: none;
   color: var(--ink);
   background:
     radial-gradient(circle at 84% 12%, rgba(255,255,255,.94), transparent 28rem),
@@ -262,7 +267,7 @@ body:not(.nav-ready) .site-nav {
     linear-gradient(135deg, #edf7fa 0%, #d6e8ec 100%);
   padding: clamp(28px, 3vw, 52px) clamp(34px, 5vw, 74px);
   /* Clear the fixed header bar when jumping to in-page anchors. */
-  scroll-margin-top: clamp(80px, 8vw, 104px);
+  scroll-margin-top: clamp(96px, 8vw, 120px);
 }
 
 /* First visible section on standalone pages needs to clear the fixed header. */
