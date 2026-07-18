@@ -825,8 +825,20 @@ p {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: .12em;
+  line-height: 1.4;
   text-align: center;
   text-transform: uppercase;
+}
+
+/* Reserve enough title height for the longest heading in each row (up to 4
+   lines for services, 3 for models) so every description starts on the
+   same horizontal line regardless of how many lines its own title wraps to. */
+.service-card h3 {
+  min-height: 5.6em;
+}
+
+.model-item h3 {
+  min-height: 4.2em;
 }
 
 .service-card p {
