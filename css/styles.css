@@ -587,9 +587,9 @@ p {
 
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(300px, .8fr);
+  grid-template-columns: minmax(300px, 1fr) minmax(320px, .85fr);
   gap: clamp(34px, 6vw, 80px);
-  align-items: start;
+  align-items: center;
 }
 
 .about-copy {
@@ -601,9 +601,9 @@ p {
 }
 
 .portrait-hero {
-  align-self: start;
+  align-self: center;
   width: 100%;
-  max-width: 420px;
+  max-width: 540px;
   margin-left: auto;
   aspect-ratio: 4 / 5;
   min-height: 0;
