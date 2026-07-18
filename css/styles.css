@@ -987,6 +987,15 @@ p {
   font-size: 22px;
 }
 
+.connect-note {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
 .contact-globe {
   position: absolute;
   right: clamp(-220px, -12vw, -90px);
