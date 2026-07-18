@@ -751,6 +751,12 @@ p {
   font-weight: 500;
 }
 
+.brand-grid .brand-tiffany {
+  color: #0abab5;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
 .brands-industries {
   margin-top: 16px;
 }
