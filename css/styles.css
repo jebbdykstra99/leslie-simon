@@ -613,6 +613,9 @@ p {
   overflow: hidden;
   border: 0;
   box-shadow: var(--shadow);
+  /* Soften the hard rectangular cutoff with a gentle edge feather. */
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 88%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 88%, transparent 100%);
 }
 
 .portrait-hero img {
