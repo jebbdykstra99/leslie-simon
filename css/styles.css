@@ -508,12 +508,7 @@ p {
 }
 
 .proof-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  /* Top-align so the gold headings sit on one shared line even when the
-     sub-labels wrap to different line counts. */
-  align-items: start;
-  gap: 16px;
+  display: block;
   min-height: 104px;
   padding: 22px clamp(18px, 2.4vw, 34px) 18px;
   border-right: 1px solid var(--line);
@@ -537,12 +532,6 @@ p {
 
 .proof-item:last-child {
   border-right: 0;
-}
-
-.proof-icon {
-  color: var(--gold-dark);
-  font-size: 28px;
-  line-height: 1;
 }
 
 .proof-item strong {
