@@ -379,7 +379,7 @@ p {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding-top: clamp(51px, 4.6vw, 77px);
+  padding-top: clamp(48px, 4.6vw, 74px);
   padding-bottom: clamp(18px, 2.4vw, 36px);
   /* Clip the globe's horizon lines to the hero row so they never bleed into
      the proof strip below. */
