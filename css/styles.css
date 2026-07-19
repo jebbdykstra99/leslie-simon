@@ -498,6 +498,25 @@ p {
   background: url("../images/leslie-simon-globe-rich.png") center / contain no-repeat;
   opacity: 1;
   z-index: -1;
+  /* Keep the sphere fully visible, then gradually fade the horizon lines
+     that radiate outward below it so they lessen in intensity toward the
+     bottom edge instead of cutting off abruptly. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 76%,
+    rgba(0, 0, 0, 0.85) 84%,
+    rgba(0, 0, 0, 0.4) 94%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 76%,
+    rgba(0, 0, 0, 0.85) 84%,
+    rgba(0, 0, 0, 0.4) 94%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
 }
 
 .proof-strip {
