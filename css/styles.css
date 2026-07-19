@@ -668,9 +668,16 @@ p {
 }
 
 .icon-item b {
+  display: grid;
+  place-items: center;
   color: var(--gold-dark);
   font-size: 25px;
   line-height: 1;
+}
+
+.icon-item b svg {
+  width: 27px;
+  height: 27px;
 }
 
 .icon-item span {
