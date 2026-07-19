@@ -752,6 +752,14 @@ p {
   text-align: center;
 }
 
+/* Longer legal names need a smaller size and some breathing room to fit
+   cleanly on two lines instead of overflowing the cell. */
+.brand-grid .brand-long {
+  padding: 8px 10px;
+  font-size: clamp(13px, 1.05vw, 16px);
+  line-height: 1.25;
+}
+
 .brand-grid .brand-red {
   color: #b51e2e;
   font-family: var(--sans);
