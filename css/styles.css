@@ -681,8 +681,8 @@ p {
 }
 
 .icon-item b svg.icon-fashion {
-  width: 33px;
-  height: 33px;
+  width: 34px;
+  height: auto;
 }
 
 .icon-item span {
