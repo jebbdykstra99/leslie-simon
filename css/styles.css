@@ -680,6 +680,11 @@ p {
   height: 27px;
 }
 
+.icon-item b svg.icon-fashion {
+  width: 33px;
+  height: 33px;
+}
+
 .icon-item span {
   max-width: 16ch;
   font-size: 12px;
