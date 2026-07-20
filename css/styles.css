@@ -782,16 +782,6 @@ p {
   margin-top: 16px;
 }
 
-.brands-industries .icon-strip {
-  grid-template-columns: repeat(8, 1fr);
-  border: 0;
-  background: transparent;
-}
-
-.brands-industries .icon-item {
-  min-height: 104px;
-}
-
 .closing-note {
   margin-top: 18px;
   color: var(--gold-dark);
@@ -1089,8 +1079,7 @@ p {
   .service-grid,
   .model-grid,
   .proof-strip,
-  .icon-strip,
-  .brands-industries .icon-strip {
+  .icon-strip {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1166,8 +1155,7 @@ p {
   /* Compact the icon/stat strips into 2 columns so these sections are far
      shorter on phones instead of one tall single-file list. */
   .proof-strip,
-  .icon-strip,
-  .brands-industries .icon-strip {
+  .icon-strip {
     grid-template-columns: repeat(2, 1fr);
   }
 
