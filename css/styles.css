@@ -292,7 +292,7 @@ main > .page:first-child:not(.home-page) {
 
 .section-label {
   color: var(--gold-dark);
-  font-size: 12px;
+  font-size: clamp(14px, 1.2vw, 17px);
   font-weight: 500;
   letter-spacing: .2em;
   text-transform: uppercase;
