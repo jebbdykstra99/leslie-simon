@@ -766,19 +766,49 @@ p {
 }
 
 .brand-grid .brand-red {
-  color: #b51e2e;
+  color: #a8112e;
   font-family: var(--sans);
   font-weight: 500;
 }
 
 .brand-grid .brand-blue {
-  color: #164b80;
+  color: #002d72;
   font-family: var(--sans);
   font-weight: 500;
 }
 
 .brand-grid .brand-tiffany {
   color: #0abab5;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.brand-grid .brand-navy {
+  color: #08154a;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.brand-grid .brand-columbia {
+  color: #0193ce;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.brand-grid .brand-gap {
+  color: #003087;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.brand-grid .brand-pink {
+  color: #e8879a;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.brand-grid .brand-burlington {
+  color: #e2004b;
   font-family: var(--sans);
   font-weight: 500;
 }
