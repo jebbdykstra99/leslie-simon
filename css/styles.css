@@ -692,31 +692,10 @@ p {
   line-height: 1.28;
 }
 
-.brands-page,
 .services-page,
 .contact-page {
   display: grid;
   align-items: center;
-}
-
-.brands-layout {
-  display: grid;
-  grid-template-columns: minmax(240px, 340px) 1fr;
-  gap: clamp(38px, 7vw, 94px);
-  align-items: start;
-}
-
-.brands-copy p {
-  max-width: 34ch;
-  margin-top: 26px;
-  font-size: clamp(13px, 0.9vw, 15px);
-  font-weight: 400;
-  line-height: 1.75;
-}
-
-.brand-panel {
-  display: grid;
-  gap: 30px;
 }
 
 .divider-title {
@@ -737,93 +716,6 @@ p {
   content: "";
   height: 1px;
   background: rgba(185, 133, 22, .28);
-}
-
-.brand-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
-  gap: 20px 30px;
-  align-items: center;
-}
-
-.brand-grid span {
-  display: grid;
-  min-height: 64px;
-  place-items: center;
-  border: 1px solid rgba(23, 38, 43, .08);
-  background: rgba(255, 255, 255, .46);
-  font-family: var(--serif);
-  font-size: clamp(20px, 1.8vw, 28px);
-  text-align: center;
-}
-
-/* Longer legal names need a smaller size and some breathing room to fit
-   cleanly on two lines instead of overflowing the cell. */
-.brand-grid .brand-long {
-  padding: 8px 10px;
-  font-size: clamp(13px, 1.05vw, 16px);
-  line-height: 1.25;
-}
-
-.brand-grid .brand-red {
-  color: #a8112e;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-blue {
-  color: #002d72;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-tiffany {
-  color: #0abab5;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-navy {
-  color: #08154a;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-columbia {
-  color: #0193ce;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-gap {
-  color: #003087;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-pink {
-  color: #e8879a;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brand-grid .brand-burlington {
-  color: #e2004b;
-  font-family: var(--sans);
-  font-weight: 500;
-}
-
-.brands-industries {
-  margin-top: 16px;
-}
-
-.closing-note {
-  margin-top: 18px;
-  color: var(--gold-dark);
-  font-family: var(--serif);
-  font-size: clamp(18px, 1.6vw, 24px);
-  font-style: italic;
-  text-align: center;
 }
 
 .services-layout {
@@ -1084,7 +976,6 @@ p {
 @media (max-width: 860px) {
   .home-hero,
   .about-layout,
-  .brands-layout,
   .services-layout,
   .contact-layout {
     grid-template-columns: 1fr;
@@ -1206,11 +1097,6 @@ p {
     max-width: none;
   }
 
-  .brand-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
   .service-grid,
   .model-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1270,4 +1156,178 @@ p {
   .site-footer {
     flex-direction: column;
   }
+}
+
+/* ---------- Brand marquee section (slide 2) ---------- */
+
+.brandbar-page {
+  /* Solid mist background: the recolored logo knockouts are filled with
+     this exact color, so it must stay flat (no gradient). */
+  background: #e7f1f3;
+  padding-top: clamp(48px, 5vw, 84px);
+  padding-bottom: clamp(44px, 4.6vw, 78px);
+}
+
+.brandbar-head h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(30px, 3.4vw, 54px);
+  line-height: 1.14;
+  color: var(--ink);
+  text-align: center;
+  margin: 0;
+}
+
+/* LS crest at the top of the slide: monogram between fading hairlines. */
+.brandbar-crest {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 38px);
+  margin-bottom: clamp(24px, 2.8vw, 40px);
+}
+
+.brandbar-crest::before,
+.brandbar-crest::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.brandbar-crest::before {
+  background: linear-gradient(to right, transparent, rgba(176, 141, 63, .55));
+}
+
+.brandbar-crest::after {
+  background: linear-gradient(to left, transparent, rgba(176, 141, 63, .55));
+}
+
+.brandbar-crest img {
+  width: clamp(58px, 5.4vw, 84px);
+  height: auto;
+  /* Same treatment as the header brand mark: fade the emblem's square
+     background so only the round LS seal shows. */
+  -webkit-mask-image: radial-gradient(circle at center, #000 52%, transparent 70%);
+  mask-image: radial-gradient(circle at center, #000 52%, transparent 70%);
+}
+
+/* Hairline–diamond–hairline flourish beneath the headline. */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  margin: clamp(22px, 2.6vw, 34px) auto 0;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(176, 141, 63, .6);
+}
+
+.ornament-divider span {
+  width: 7px;
+  height: 7px;
+  background: #b08d3f;
+  transform: rotate(45deg);
+}
+
+/* Full-bleed hairlines framing the logo band, matching the crest gold. */
+.marquee-band {
+  border-top: 1px solid rgba(176, 141, 63, .45);
+  border-bottom: 1px solid rgba(176, 141, 63, .45);
+  margin: clamp(34px, 4.4vw, 62px) calc(-1 * clamp(34px, 5vw, 74px)) clamp(40px, 5vw, 72px);
+  padding: clamp(24px, 2.8vw, 40px) 0;
+}
+
+.logo-marquee {
+  overflow: hidden;
+  /* Fade the strip edges for an editorial feel. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: brand-marquee 80s linear infinite;
+}
+
+.logo-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes brand-marquee {
+  to { transform: translateX(-50%); }
+}
+
+.marquee-set {
+  display: flex;
+  align-items: center;
+  gap: clamp(44px, 4.8vw, 78px);
+  padding-right: clamp(44px, 4.8vw, 78px);
+}
+
+.marquee-set img {
+  display: block;
+  width: auto;
+  max-width: none;
+}
+
+.marquee-set .logo-lg { height: 46px; }
+.marquee-set .logo-md { height: 32px; }
+.marquee-set .logo-sm { height: 24px; }
+.marquee-set .logo-xw { height: auto; width: 180px; }
+
+.logo-mlbpa {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .32em;
+  line-height: 1.75;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  color: #b08d3f;
+}
+
+.brand-exp {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.brand-exp .section-label {
+  text-align: center;
+  margin: 0 0 clamp(22px, 2.4vw, 34px);
+}
+
+.brand-exp-list {
+  columns: 3;
+  column-gap: clamp(44px, 6vw, 96px);
+  column-rule: 1px solid rgba(176, 141, 63, .35);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.brand-exp-list li {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2.15;
+  color: var(--ink);
+  break-inside: avoid;
+}
+
+@media (max-width: 760px) {
+  .brand-exp-list { columns: 2; }
+  .marquee-set .logo-lg { height: 38px; }
+  .marquee-set .logo-md { height: 26px; }
+  .marquee-set .logo-sm { height: 20px; }
+  .marquee-set .logo-xw { width: 140px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }
