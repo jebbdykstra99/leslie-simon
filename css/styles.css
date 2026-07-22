@@ -1005,7 +1005,8 @@ p {
   .service-grid,
   .model-grid,
   .proof-strip,
-  .icon-strip {
+  .icon-strip,
+  .icon-strip.icon-strip--expertise {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1081,7 +1082,8 @@ p {
   /* Compact the icon/stat strips into 2 columns so these sections are far
      shorter on phones instead of one tall single-file list. */
   .proof-strip,
-  .icon-strip {
+  .icon-strip,
+  .icon-strip.icon-strip--expertise {
     grid-template-columns: repeat(2, 1fr);
   }
 
