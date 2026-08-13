@@ -528,25 +528,9 @@ p {
 
 .proof-item {
   display: block;
-  min-height: 104px;
-  padding: 22px clamp(18px, 2.4vw, 34px) 18px;
+  min-height: 168px;
+  padding: 26px clamp(18px, 2.4vw, 30px) 24px;
   border-right: 1px solid var(--line);
-}
-
-/* Center the icon on the gold heading's 34px line (and out-rank the generic
-   .proof-item span rule that would otherwise shrink/offset it). Lowered 10px
-   from the heading's optical center per feedback that icons sat too high. */
-.proof-item .proof-icon {
-  margin-top: 0px;
-  font-size: 17px;
-  line-height: 34px;
-}
-
-/* Icons 2-4 sized 20% smaller than the first (Legacy stays at 17px). */
-.proof-item:nth-child(2) .proof-icon,
-.proof-item:nth-child(3) .proof-icon,
-.proof-item:nth-child(4) .proof-icon {
-  font-size: 13.6px;
 }
 
 .proof-item:last-child {
@@ -557,29 +541,21 @@ p {
   display: block;
   color: var(--gold-dark);
   font-family: var(--serif);
-  font-size: clamp(25px, 2.3vw, 34px);
-  font-weight: 400;
-  line-height: 1;
+  font-size: clamp(19px, 1.6vw, 23px);
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1.15;
 }
 
 .proof-item span {
   display: block;
-  margin-top: 14px;
-  font-size: 11px;
-}
-
-/* Slightly smaller copy in the Future-Ready and Early Talent boxes so the
-   longer labels wrap naturally and the four quadrants feel balanced. */
-.proof-item:nth-child(2) div span,
-.proof-item:nth-child(3) div span {
-  font-size: 10px;
-}
-
-.proof-item span {
-  font-weight: 500;
-  letter-spacing: .12em;
-  line-height: 1.35;
-  text-transform: uppercase;
+  margin-top: 12px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.6;
+  text-transform: none;
 }
 
 .about-page {
@@ -637,6 +613,7 @@ p {
 /* Areas of Expertise (10 items): two even rows of 5 instead of 8-wide. */
 .icon-strip.icon-strip--expertise {
   grid-template-columns: repeat(5, 1fr);
+  margin-top: clamp(40px, 5vw, 68px);
 }
 
 .icon-strip-title {
