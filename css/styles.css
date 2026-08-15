@@ -92,20 +92,30 @@ a {
   backdrop-filter: none;
 }
 
-/* Nav bar: stays fixed (sticky) so visitors can jump between sections from
-   anywhere on the one-page site. Right-aligned so it never covers the logo. */
-.nav-bar {
+/* Social bar: fixed top-right, replaces the old nav links. */
+.social-bar {
   position: fixed;
-  top: 14px;
-  right: clamp(18px, 2.6vw, 44px);
+  top: 22px;
+  right: clamp(24px, 3.4vw, 56px);
   z-index: 50;
   display: flex;
   align-items: center;
-  gap: clamp(22px, 2.6vw, 40px);
-  padding: 14px clamp(20px, 2.8vw, 36px);
-  background: var(--paper);
-  border-radius: 999px;
-  box-shadow: 0 8px 24px rgba(23, 38, 43, .1);
+  gap: 18px;
+}
+
+.social-bar a {
+  display: flex;
+  color: var(--ink);
+  transition: color .2s ease;
+}
+
+.social-bar a:hover {
+  color: var(--gold-dark);
+}
+
+.social-bar svg {
+  width: 21px;
+  height: 21px;
 }
 
 .brand {
@@ -167,99 +177,6 @@ a {
   text-indent: 0;
 }
 
-.site-nav {
-  position: static;
-  order: 1;
-  /* Hidden until opened; the toggle controls visibility on every viewport. */
-  display: none;
-  flex-direction: row;
-  align-items: center;
-  gap: clamp(20px, 2.4vw, 42px);
-  min-width: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.site-nav.is-open {
-  display: flex;
-}
-
-/* Avoid a flash of the open dropdown before JS sets the correct state. */
-body:not(.nav-ready) .site-nav {
-  display: none;
-}
-
-.site-nav a {
-  position: relative;
-  width: auto;
-  border-bottom: 0;
-  padding: 6px 0;
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .16em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.site-nav a:hover {
-  color: var(--gold-dark);
-}
-
-.site-nav a[aria-current="page"] {
-  color: var(--gold-dark);
-}
-
-.site-nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -7px;
-  height: 2px;
-  background: var(--gold-dark);
-}
-
-.nav-toggle {
-  position: relative;
-  z-index: 60;
-  order: 2;
-  display: block;
-  height: 41px;
-  border: 0;
-  border-left: 1px solid rgba(42, 72, 78, .22);
-  background: transparent;
-  padding: 8px 0 8px clamp(20px, 2vw, 30px);
-  cursor: pointer;
-}
-
-.nav-toggle span:not(.sr-only) {
-  display: block;
-  width: 25px;
-  height: 2px;
-  margin: 5px 0;
-  background: var(--gold-dark);
-  transition: transform .28s ease, opacity .2s ease;
-}
-
-.nav-toggle.is-active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.nav-toggle.is-active span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.is-active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-.site-nav.is-open {
-  display: flex;
-}
-
 .page {
   position: relative;
   overflow: hidden;
@@ -282,6 +199,7 @@ main > .page:first-child:not(.home-page) {
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
+  padding-top: 0;
   padding-bottom: 0;
   background:
     radial-gradient(70% 60% at 28% 42%, rgba(255,255,255,.55), transparent 62%),
@@ -382,7 +300,7 @@ p {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding-top: clamp(48px, 4.6vw, 74px);
+  padding-top: clamp(88px, 7.4vw, 118px);
   padding-bottom: clamp(18px, 2.4vw, 36px);
   /* Clip the globe's horizon lines to the hero row so they never bleed into
      the proof strip below. */
@@ -392,7 +310,6 @@ p {
 .hero-copy {
   position: relative;
   z-index: 2;
-  margin-top: 52px;
   max-width: 520px;
 }
 
@@ -996,55 +913,16 @@ p {
   }
 }
 
-@media (max-width: 900px) {
-  .site-nav {
-    position: absolute;
-    top: 60px;
-    right: clamp(24px, 3.4vw, 56px);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    min-width: 200px;
-    padding: 10px 16px;
-    border: 1px solid rgba(42, 72, 78, .16);
-    background: rgba(244, 251, 252, .96);
-    box-shadow: var(--shadow);
-  }
-
-  .site-nav.is-open {
-    display: flex;
-  }
-
-  .site-nav a {
-    width: 100%;
-    border-bottom: 1px solid rgba(42, 72, 78, .12);
-    padding: 12px 0;
-    text-align: center;
-  }
-
-  .site-nav a[aria-current="page"]::after {
-    display: none;
-  }
-
-  .nav-toggle {
-    border-left: 0;
-    padding-left: 8px;
-  }
-}
-
 @media (max-width: 760px) {
-  /* Collapsed state is just the toggle button: shrink the pill so it
-     tucks into the corner instead of spanning over the wordmark. */
-  .nav-bar {
-    top: 12px;
-    right: 12px;
-    padding: 4px;
-    border-radius: 50%;
+  .social-bar {
+    top: 16px;
+    right: 16px;
+    gap: 12px;
   }
 
-  .nav-toggle {
-    padding-left: 0;
+  .social-bar svg {
+    width: 18px;
+    height: 18px;
   }
 
   .brand-mark {
