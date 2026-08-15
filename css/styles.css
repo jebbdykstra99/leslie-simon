@@ -499,6 +499,30 @@ p {
   margin-top: 18px;
 }
 
+/* Two-column editorial bio, used when there's no portrait alongside it. */
+.about-layout--full {
+  display: block;
+}
+
+.about-intro {
+  max-width: 760px;
+  margin-bottom: clamp(30px, 3.4vw, 46px);
+}
+
+.about-columns {
+  columns: 2;
+  column-gap: clamp(40px, 5vw, 72px);
+  column-rule: 1px solid rgba(176, 141, 63, .3);
+}
+
+.about-columns p {
+  break-inside: avoid;
+}
+
+.about-columns p + p {
+  margin-top: 18px;
+}
+
 .portrait-hero {
   align-self: center;
   width: 100%;
@@ -512,6 +536,12 @@ p {
   /* Soften the hard rectangular cutoff with a gentle edge feather. */
   -webkit-mask-image: radial-gradient(ellipse at center, #000 88%, transparent 100%);
   mask-image: radial-gradient(ellipse at center, #000 88%, transparent 100%);
+}
+
+.hero-portrait {
+  align-self: center;
+  max-width: 600px;
+  aspect-ratio: 5 / 6;
 }
 
 .portrait-hero img {
@@ -899,6 +929,11 @@ p {
     min-height: 420px;
   }
 
+  .about-columns {
+    columns: 1;
+    column-rule: 0;
+  }
+
   .service-grid,
   .model-grid,
   .proof-strip,
@@ -940,6 +975,11 @@ p {
 
   .home-hero {
     display: block;
+  }
+
+  .hero-portrait {
+    margin-top: clamp(28px, 6vw, 40px);
+    max-width: none;
   }
 
   .hero-copy h1 {
