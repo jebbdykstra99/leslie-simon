@@ -96,7 +96,12 @@ a {
 .social-bar {
   position: fixed;
   top: 22px;
-  right: clamp(24px, 3.4vw, 56px);
+  /* Match .page's own horizontal padding (clamp(34px,5vw,74px)) exactly,
+     PLUS whatever extra centering slack .home-hero picks up once it hits
+     its own 1900px cap on very wide/zoomed-out screens — otherwise the
+     icons stay pinned to the raw viewport edge while the hero (and its
+     photo) center inward, drifting out of alignment. */
+  right: calc(clamp(34px, 5vw, 74px) + max(0px, (100vw - clamp(68px, 10vw, 148px) - 1900px) / 2));
   z-index: 50;
   display: flex;
   align-items: center;
@@ -394,17 +399,18 @@ p {
   z-index: 1;
   align-self: start;
   display: grid;
-  /* Bounded (non-fr) tracks so the columns stop growing past a sensible
-     content width instead of stretching edge-to-edge on very wide or
-     zoomed-out viewports; justify-content centers the pair as a unit so
-     the photo never drifts off toward the right edge on its own. */
-  grid-template-columns: minmax(340px, 540px) minmax(400px, 620px);
-  justify-content: center;
+  /* Text column stays flexible (1fr) so it fills to the page's padded
+     edge like every other section — that's what keeps the photo's right
+     edge flush with the social icons above it. The photo column is
+     bounded so it can't grow past a sensible size, and the whole row
+     gets an outer cap + centering purely as a safety net for ultra-wide
+     or heavily zoomed-out windows. */
+  grid-template-columns: minmax(340px, 1fr) minmax(400px, 600px);
   align-items: start;
   gap: clamp(24px, 3vw, 56px);
   width: 100%;
-  max-width: none;
-  margin: 0;
+  max-width: 1900px;
+  margin: 0 auto;
   padding-top: clamp(88px, 7.4vw, 118px);
   padding-bottom: clamp(18px, 2.4vw, 36px);
   /* Clip the globe's horizon lines to the hero row so they never bleed into
