@@ -56,19 +56,3 @@ document.querySelectorAll('[data-lead-form]').forEach((leadForm) => {
     }
   });
 });
-
-// Email popup: the header email icon and the Contact section's email address
-// both open Gmail's web compose window (pre-addressed to Leslie) in a small
-// popup instead of relying on the visitor's default mail app.
-const EMAIL_ADDRESS = 'hello@lesliesimonrecruiting.com';
-const EMAIL_SUBJECT = 'Inquiry to Leslie Simon';
-
-const openEmailPopup = (event) => {
-  if (event) event.preventDefault();
-  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL_ADDRESS)}&su=${encodeURIComponent(EMAIL_SUBJECT)}`;
-  window.open(url, 'lst-email-popup', 'width=640,height=680,noopener,noreferrer');
-};
-
-document.querySelectorAll('[data-email-popup]').forEach((el) => {
-  el.addEventListener('click', openEmailPopup);
-});
