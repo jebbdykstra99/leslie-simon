@@ -61,7 +61,7 @@ document.querySelectorAll('[data-lead-form]').forEach((leadForm) => {
 // both open Gmail's web compose window (pre-addressed to Leslie) in a small
 // popup instead of relying on the visitor's default mail app.
 const EMAIL_ADDRESS = 'hello@lesliesimonrecruiting.com';
-const EMAIL_SUBJECT = 'Inquiry from LeslieSimonRecruiting.com';
+const EMAIL_SUBJECT = 'Inquiry to Leslie Simon';
 
 const openEmailPopup = (event) => {
   if (event) event.preventDefault();
