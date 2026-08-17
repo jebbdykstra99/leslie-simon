@@ -57,51 +57,18 @@ document.querySelectorAll('[data-lead-form]').forEach((leadForm) => {
   });
 });
 
-// Contact popup: the email icon opens an overlay with a short lead form
-// instead of navigating to the Contact section/page.
-const contactModal = document.querySelector('[data-contact-modal]');
-const contactTriggers = document.querySelectorAll('[data-contact-trigger]');
+// Email popup: the header email icon and the Contact section's email address
+// both open Gmail's web compose window (pre-addressed to Leslie) in a small
+// popup instead of relying on the visitor's default mail app.
+const EMAIL_ADDRESS = 'hello@lesliesimonrecruiting.com';
+const EMAIL_SUBJECT = 'Inquiry from LeslieSimonRecruiting.com';
 
-if (contactModal && contactTriggers.length) {
-  const dismissEls = contactModal.querySelectorAll('[data-contact-modal-dismiss]');
-  let lastFocused = null;
-  let closeTimer = null;
+const openEmailPopup = (event) => {
+  if (event) event.preventDefault();
+  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL_ADDRESS)}&su=${encodeURIComponent(EMAIL_SUBJECT)}`;
+  window.open(url, 'lst-email-popup', 'width=640,height=680,noopener,noreferrer');
+};
 
-  const openContactModal = (event) => {
-    if (event) event.preventDefault();
-    clearTimeout(closeTimer);
-    lastFocused = document.activeElement;
-    contactModal.hidden = false;
-    document.body.classList.add('contact-modal-open');
-    // Next frame so the transition actually runs instead of snapping open.
-    requestAnimationFrame(() => contactModal.classList.add('is-open'));
-    const firstField = contactModal.querySelector('input, textarea');
-    if (firstField) firstField.focus();
-  };
-
-  const closeContactModal = () => {
-    contactModal.classList.remove('is-open');
-    document.body.classList.remove('contact-modal-open');
-    closeTimer = setTimeout(() => { contactModal.hidden = true; }, 300);
-    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
-  };
-
-  contactTriggers.forEach((trigger) => trigger.addEventListener('click', openContactModal));
-  dismissEls.forEach((el) => el.addEventListener('click', closeContactModal));
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && contactModal.classList.contains('is-open')) closeContactModal();
-  });
-
-  // Close automatically once the popup form's own submission succeeds.
-  const modalForm = contactModal.querySelector('[data-lead-form]');
-  const modalStatus = modalForm ? modalForm.querySelector('[data-form-status]') : null;
-  if (modalStatus) {
-    const statusObserver = new MutationObserver(() => {
-      if (!modalStatus.hidden && !modalStatus.classList.contains('is-error')) {
-        setTimeout(closeContactModal, 1800);
-      }
-    });
-    statusObserver.observe(modalStatus, { attributes: true, attributeFilter: ['hidden', 'class'] });
-  }
-}
+document.querySelectorAll('[data-email-popup]').forEach((el) => {
+  el.addEventListener('click', openEmailPopup);
+});
