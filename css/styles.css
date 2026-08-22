@@ -814,8 +814,8 @@ p {
 }
 
 .contact-intro img {
-  width: 126px;
-  height: 126px;
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -1123,8 +1123,8 @@ p {
   }
 
   .contact-intro img {
-    width: 96px;
-    height: 96px;
+    width: 128px;
+    height: 128px;
   }
 
   .site-footer {
