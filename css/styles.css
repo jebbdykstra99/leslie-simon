@@ -578,6 +578,10 @@ p {
   /* Center within its track instead of hugging the right edge (the base
      .portrait-hero rule right-aligns it for the About page's layout). */
   margin: 0 auto;
+  /* The photo's background is transparent and blends into the page, so the
+     card-style drop shadow from .portrait-hero would just read as a stray
+     box around it — drop it here. */
+  box-shadow: none;
 }
 
 .portrait-hero img {
